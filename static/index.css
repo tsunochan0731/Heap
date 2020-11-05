@@ -1,0 +1,265 @@
+.header {
+  color:white;
+  text-align:center;
+}
+
+.thema{
+  font-size:20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align:center;
+}
+
+.thema2{
+  font-size:20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align:center;
+}
+
+.font-small {
+  font-size: 0.8rem;
+}
+
+.caution{
+  margin-bottom: 20px;
+}
+
+.main{
+  font-size:15px;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  margin:0px 30%;
+  padding:0px;
+  text-align:center;
+}
+
+.small{
+  font-size:8px;
+}
+
+.main-result{
+  font-size:15px;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  margin:0px 30%;
+  padding:0px;
+  text-align:left;
+}
+
+html{
+  background-color: #F5F5F5;
+}
+
+body{
+  padding: 0px;
+  background-color: white;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+span{
+  text-align: center
+}
+
+.button-submit {
+  display       : inline-block;
+  font-size     : 18pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 12px 30px;
+  background: #006600;
+  color         : #ffffff;
+  transition    : .3s;
+  font-family: 'Montserrat', sans-serif;
+  margin:25px 0px;
+  border: none;
+}
+
+.button-submit:hover {
+  box-shadow    : none;
+  color         : #006600;
+  background    : #ffffff;
+}
+
+.button-back{
+  display       : inline-block;
+  font-size     : 12pt;
+  text-align    : center;
+  float: right;
+  cursor        : pointer;
+  padding       : 12px 10px;
+  background: #ffffff;
+  color         : #006600;
+  transition    : .3s;
+  font-family: 'Montserrat', sans-serif;
+  margin-top:20px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.button-back :hover {
+  box-shadow    : none;
+  color         : #ffffff;
+  background    : #006600;
+}
+
+#disclaimer{
+  display       : inline-block;
+  font-size     : 12pt;
+  text-align    : center;
+  float: center;
+  cursor        : pointer;
+  padding       : 0px 10px;
+  background: #ffffff;
+  color         : #006600;
+  transition    : .3s;
+  font-family: 'Montserrat', sans-serif;
+  margin-top:20px;
+  margin-bottom:20px;
+  border-left: none;
+  border-right: none;
+  border-top:solid 1px #dcdcdc;
+  border-bottom: solid 1px #dcdcdc;
+  border-radius: 0px;
+  padding:20px 40px;
+ }
+
+#disclaimer :hover {
+  box-shadow    : none;
+  color         : #ffffff;
+  background    : #006600;
+}
+
+#note{
+  display       : inline-block;
+  font-size     : 8pt;
+  text-align    : center;
+  float: center;
+  cursor        : pointer;
+  padding       : 0px 10px;
+  background: #ffffff;
+  color         : #dcdcdc;
+  transition    : .3s;
+  font-family: "Avenir Next", sans-serif;
+  margin-top:0px;
+  margin-bottom:0px;
+  border-left: none;
+  border-right: none;
+  border-top:solid 1px #dcdcdc;
+  border-bottom: solid 1px #dcdcdc;
+  border-radius: 0px;
+  padding:10px 40px;
+ }
+
+#note :hover {
+  box-shadow    : none;
+  color         : #ffffff;
+  background    : #006600;
+}
+
+input {
+  background-color: #f5f5f5;
+}
+
+.jumbotron-header{
+  background: linear-gradient(-135deg, rgba(255,255,0,0.6), rgba(0,100,0,0.65)),url(/static/images/yugekeshiki.png);
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.item {
+  float:left;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  color:#666666;
+  margin-top:25px;
+}
+
+input[type=radio]{
+  display:none;
+}
+
+input:checked + label {
+  background: #006600;/* マウス選択時の背景色を指定する */
+  color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+
+.radio {
+  display: block; /* ブロックレベル要素化する */
+  float: left; /* 要素の左寄せ・回り込を指定する */
+  width: 100%; /* ボックスの横幅を指定する */
+  height: 45px; /* ボックスの高さを指定する */
+  padding-left: 5px; /* ボックス内左側の余白を指定する */
+  padding-right: 5px; /* ボックス内御右側の余白を指定する */
+  color: #696969; /* フォントの色を指定 */
+  background-color:#dcdcdc;
+  text-align: center; /* テキストのセンタリングを指定する */
+  line-height: 45px; /* 行の高さを指定する */
+  cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+}
+
+/*ここから下はFooter関連*/
+.footer-sentence{
+  font-size:15px;
+  font-family: "Avenir Next", sans-serif;
+  text-align:right;
+  padding-right: 20px;
+  float:right;
+  color:white;
+}
+
+.footer-logo{
+  float:left;
+  width:280px;
+  height:100px;
+}
+
+.footer {
+    background-color: #006600;
+    padding-top:40px;
+    width: 100%;
+    bottom: 0;
+    font-weight: lighter;
+    color: white;
+}
+
+.footer h3{
+    font-weight:lighter;
+}
+.footer ul{
+    padding-left:5px;
+    list-style:none;
+}
+.footer p{
+    text-align : justify;
+    font-size : 12px;
+}
+.footer iframe {
+    width:100%;
+    position:relative;
+    height:170px;
+}
+.sm{
+    list-style:none;
+    overflow:auto;
+}
+.sm li {
+    display: inline;
+    padding:5px;
+    float:left;
+}
+.sm li a img {
+    width:32px;
+}
+
+#hplink a:visited{
+  color:white;
+}
+
+@media screen and (max-width: 576px){
+  .main{
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .main-result{
+    margin: 0 5px;
+  }
+}

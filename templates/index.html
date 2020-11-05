@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:url" content="https://scfm-hm.appspot.com/index"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="SCFM Health Maintenance App"/>
+    <meta property="og:image" content="https://scfm-hm.appspot.com/static/images/OGP.jpg"/>
+    <meta property="og:description" content=“滋賀家庭医療学センター(SCFM)によるヘルスメンテナンスのアプリケーションです”/>
+    <title>SCFM Health Maintenance</title>
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'index.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      <div class="jumbotron jumbotron-fluid jumbotron-header">
+        <h1>Recommended Health Maintenance</h1>
+        <h1>for Our Patients</h1>
+      </div>
+    </div>
+    <div class="main">
+      <p class="thema">Please enter patient information below</p>
+
+      <form action="/result" method="POST">
+        <div class="form-row">
+          <div class="form-group col-sm-12">
+            <label for="age" class="item">Age(years)</label>
+            <input type="text" class="form-control" name="age" pattern="[0-9]{1,3}" placeholder="Please use half-widths English numbers" required/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-6">
+            <label for="height" class="item">Height(cm)</label>
+            <input type="text" class="form-control" name="height" pattern="[1-9][0-9]*" placeholder="Please use half-widths numbers" required/>
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="age" class="item">Weight(kg)</label>
+            <input type="text" class="form-control" name="weight" pattern="[1-9][0-9]*" placeholder="Please use half-widths numbers" required/>
+          </div>
+         </div>
+
+         <div class="form-row form-group">
+           <div class="col-12 item">
+             Gender
+           </div>
+           <div class="col-sm-6">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="male" type="radio" name="gender" value="m" required
+               data-toggle="collapse" data-target="#collapse-pregnancy.show" aria-expanded="false" aria-controls="collapse-pregnancy" required
+               />
+               <label for="male" class="form-check-label radio">Male</label>
+             </div>
+           </div>
+           <div class="col-sm-6">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="female" type="radio" name="gender" value="f"
+               data-toggle="collapse" data-target="#collapse-pregnancy:not(.show)" aria-expanded="true" aria-controls="collapse-pregnancy" required
+               />
+               <label for="female" class="form-check-label radio">Female</label>
+             </div>
+           </div>
+         </div>
+
+         <div class="form-row form-group collapse collapse-pregnancy" id="collapse-pregnancy">
+           <div class="col-12 item">
+             (If female)Trying to be Pregnant?
+           </div>
+           <div class="col-sm-6">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="yes1" type="radio" name="pregnancy" value="1" required/>
+               <label for="yes1" class="form-check-label radio">Yes</label>
+             </div>
+           </div>
+           <div class="col-sm-6">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="no1" type="radio" name="pregnancy" value="2" checked="checked">
+               <label for="no1" class="form-check-label radio">No</label>
+             </div>
+           </div>
+         </div>
+
+         <div class="form-row form-group">
+           <div class="col-12 item">
+             Smoking status
+           </div>
+           <div class="col-sm-4">
+             <div class="form-check pl-0">
+               {# inputタグに細工をする。
+                data-toggle="collapse" を指定。
+                data-target="#collapse-smoking:not(.show)" を指定。開閉したい要素のIDを指定する。押すとcollapseが開くように設定するには、この指定。
+                押すとcollapseが閉じるようにする設定は、"#collapse-smoking.show"
+                aria-expanded="true" 押すとcollapseが開くように設定するには"true"、そうでない場合は"false"
+                aria-controls="collapse-smoking" 開閉したい要素のクラス名を指定する。
+               #}
+               <input class="form-check-input button-item" id="yes2" type="radio" name="smoking" value="1" required
+                data-toggle="collapse" data-target="#collapse-smoking:not(.show)" aria-expanded="true" aria-controls="collapse-smoking"
+               />
+               <label for="yes2" class="form-check-label radio">Current</label>
+             </div>
+           </div>
+           <div class="col-sm-4">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="no2" type="radio" name="smoking" value="2"
+                 data-toggle="collapse" data-target="#collapse-smoking.show" aria-expanded="false" aria-controls="collapse-smoking"
+               >
+               <label for="no2" class="form-check-label radio">Never</label>
+             </div>
+           </div>
+           <div class="col-sm-4">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="past" type="radio" name="smoking" value="3"
+                 data-toggle="collapse" data-target="#collapse-smoking:not(.show)" aria-expanded="true" aria-controls="collapse-smoking"
+                 >
+               <label for="past" class="form-check-label radio">Past</label>
+             </div>
+           </div>
+         </div>
+
+         {# 開閉したい要素のクラスに、"collapse"を追加し、idを設定する。クラスにもidと同名のクラスを設定しておく。 #}
+        <div class="form-row collapse collapse-smoking" id="collapse-smoking">
+          <div class="form-group col-sm-6">
+            <label for="howmany" class="item">How many cigarettes per day?</label>
+            <input type ="text" class="form-control" name="number_of_smoking" required pattern="[0-9]{1,3}" placeholder="if not applicable put 0" value="0"></p>
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="howlong" class="item">How long?(years)</label>
+            <input type ="text" class="form-control" name="years_of_smoking" required pattern="[0-9]{1,2}" placeholder="if not applicable put 0" value="0"></p>
+          </div>
+        </div>
+
+         <div class="form-row form-group">
+           <div class="col-12 item">
+             Experience of Sexual Activity
+           </div>
+           <div class="col-sm-6">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="yes3" type="radio" name="sex" value="1" required />
+               <label for="yes3" class="form-check-label radio">Yes</label>
+             </div>
+           </div>
+           <div class="col-sm-6">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="no3" type="radio" name="sex" value="2">
+               <label for="no3" class="form-check-label radio">No</label>
+             </div>
+           </div>
+         </div>
+
+         <div class="form-row form-group">
+           <div class="col-12 item">
+             alcohol status
+           </div>
+           <div class="col-sm-6">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="yes4" type="radio" name="alcohol" value="1" required />
+               <label for="yes4" class="form-check-label radio">Yes</label>
+             </div>
+           </div>
+           <div class="col-sm-6">
+             <div class="form-check pl-0">
+               <input class="form-check-input button-item" id="no4" type="radio" name="alcohol" value="2">
+               <label for="no4" class="form-check-label radio">No</label>
+             </div>
+           </div>
+         </div>
+
+         <div class="row">
+           <div class="col-12">
+             <input type = "submit" value = "Get Recommendation" class="button-submit"></p>
+           </div>
+         </div>
+
+      </form>
+    </div>
+    <div class="footer">
+      <div class="container">
+      <div class="row">
+        <div class="col-md-4" >
+  		    <h3>About us</h3>
+  		    <p>
+  		        Yuge Medical Clinic is a clinic which is located in the middle of Shiga prefecture. We have focused on high quality primary care and homemedical care, and we also have been engaged in education of family medicine in Shiga Prefecture.
+  		    </p>
+          <a href="https://scfm.jp"><img src="/static/images/SCFM1.png" class="footer-logo img-fluid"></a>
+        </div>
+        <div class="col-md-4">
+          <h3>Our Location </h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.7384303296!2d136.1174659508822!3d35.08826776977322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60017b43b7ad455f%3A0x301d1be235277d19!2z5byT5YmK44Oh44OH44Kj44Kr44Or44Kv44Oq44OL44OD44Kv77yI5Yy755mC5rOV5Lq656S-5Zuj77yJ5Zyo5a6F5Yy755mC6YOo!5e0!3m2!1sja!2sjp!4v1597480432814!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  		  </div>
+        <div class="col-md-4" >
+          <h3>Contact Us</h3>
+          <ul>
+  		        <li>Phone : +81 - 748 - 57 - 1141</li>
+  		        <li>E-mail : scfm-tsunoda@yugemed-scfm.com</li>
+              <li id="hplink"><a href="https://scfm.jp">homepage : https://scfm.jp</a></li>
+  		    </ul>
+  		    <p>
+  		        This application was made by Shiga Center for Family Medicine and Hideki Tsunoda. If there are any problems, please contact us.
+  		    </p>
+  		    <ul class="sm">
+  		        <li><a href="https://www.facebook.com/scfm.jp/" ><img src="https://www.facebook.com/images/fb_icon_325x325.png" class="img-fluid"></a></li>
+  		        <li><a href="#" ><img src="http://playbookathlete.com/wp-content/uploads/2016/10/twitter-logo-4.png" class="img-fluid" ></a></li>
+  		    </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

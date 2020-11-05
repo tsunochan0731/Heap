@@ -1,0 +1,391 @@
+/*header関連*/
+.header {
+  color:white;
+  text-align:center;
+}
+
+.jumbotron-header{
+  background: url(/static/images/toppage1103.jpg);
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.jumbotron-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+label {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ffffff;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  z-index: 1000;
+}
+
+span {
+  width: 20px;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  right: 15px;
+  transition: .3s;
+  z-index: 100;
+}
+
+.span1 {
+  top: 20px;
+  background-color: #ffffff;
+}
+
+.span2 {
+  top: 27px;
+  background-color: #ffffff;
+}
+
+.span3 {
+  top: 34px;
+  background-color: #ffffff;
+}
+
+#check:checked ~ .span2 {
+  display: none;
+}
+
+#check:checked ~ .span1 {
+  width: 27px;
+  transform: rotate(45deg);
+  top: 27px;
+  right: 12px;
+}
+
+#check:checked ~ .span3 {
+  width: 27px;
+  transform: rotate(-45deg);
+  top: 27px;
+  right: 12px;
+}
+
+#check {
+  display: none;
+}
+
+ul {
+  width: 20%;
+  height: 100%;
+  background-color: #2a9ee04a;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  transition: 1s;
+  z-index: 10;
+}
+
+li {
+  margin-top: 20px;
+}
+
+#check:checked ~ ul {
+  right: 0;
+}
+
+/*main関連*/
+.main{
+  font-size:15px;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  padding:0px;
+  text-align:center;
+}
+
+.height-adjust{
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+.height-adjust-area {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+.topic{
+  margin: 30px 0px;
+}
+
+.subtitle{
+  font-size:20px;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  padding:20px 20px;
+  text-align:center;
+  border-top: 2px solid #006600;
+  background-color: #F0FFF0;
+  color:black;
+}
+
+.button-submit {
+  display       : inline-block;
+  font-size     : 18pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 12px 30px;
+  background: #006600;
+  color         : #ffffff;
+  transition    : .3s;
+  font-family: 'Montserrat', sans-serif;
+  margin:25px 0px;
+  border: none;
+}
+
+.button-submit:hover {
+  box-shadow    : none;
+  color         : #006600;
+  background    : #ffffff;
+}
+
+.box {
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    color: #565656;
+    background: #ffffff;
+    border: solid 2px #006600;
+}
+
+.box p {
+    margin: 0;
+    padding: 0.5em 0.5em;
+    text-align:left;
+}
+
+div.changelog{
+  width: 60%;
+  height: 200px;
+  overflow-y: scroll;
+  border: 2px dashed #888;
+  margin: 0px auto;
+}
+
+body{
+  padding: 0px;
+  background-color: #ffffff;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+span{
+  text-align: center
+}
+
+.button-submit {
+  display       : inline-block;
+  font-size     : 18pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 12px 30px;
+  background: #F2B077;
+  color         : #ffffff;
+  transition    : .3s;
+  font-family: 'Montserrat', sans-serif;
+  margin:25px 0px;
+  border: none;
+}
+
+.button-submit:hover {
+  box-shadow    : none;
+  color         : #ffffff;
+  background    : #D9CB04;
+}
+
+.button-back{
+  display       : inline-block;
+  font-size     : 12pt;
+  text-align    : center;
+  float: right;
+  cursor        : pointer;
+  padding       : 12px 10px;
+  background: #ffffff;
+  color         : #006600;
+  transition    : .3s;
+  font-family: 'Montserrat', sans-serif;
+  margin-top:20px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.button-back :hover {
+  box-shadow    : none;
+  color         : #ffffff;
+  background    : #006600;
+}
+
+#disclaimer{
+  display       : inline-block;
+  font-size     : 12pt;
+  text-align    : center;
+  float: center;
+  cursor        : pointer;
+  padding       : 0px 10px;
+  background: #ffffff;
+  color         : #006600;
+  transition    : .3s;
+  font-family: 'Montserrat', sans-serif;
+  margin-top:20px;
+  margin-bottom:20px;
+  border-left: none;
+  border-right: none;
+  border-top:solid 1px #dcdcdc;
+  border-bottom: solid 1px #dcdcdc;
+  border-radius: 0px;
+  padding:20px 40px;
+ }
+
+#disclaimer :hover {
+  box-shadow    : none;
+  color         : #ffffff;
+  background    : #006600;
+}
+
+#note{
+  display       : inline-block;
+  font-size     : 8pt;
+  text-align    : center;
+  float: center;
+  cursor        : pointer;
+  padding       : 0px 10px;
+  background: #ffffff;
+  color         : #dcdcdc;
+  transition    : .3s;
+  font-family: "Avenir Next", sans-serif;
+  margin-top:0px;
+  margin-bottom:0px;
+  border-left: none;
+  border-right: none;
+  border-top:solid 1px #dcdcdc;
+  border-bottom: solid 1px #dcdcdc;
+  border-radius: 0px;
+  padding:10px 40px;
+ }
+
+#note :hover {
+  box-shadow    : none;
+  color         : #ffffff;
+  background    : #006600;
+}
+
+input {
+  background-color: #f5f5f5;
+}
+
+
+
+.item {
+  float:left;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  color:#666666;
+  margin-top:25px;
+}
+
+input[type=radio]{
+  display:none;
+}
+
+input:checked + label {
+  background: #006600;/* マウス選択時の背景色を指定する */
+  color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+
+.radio {
+  display: block; /* ブロックレベル要素化する */
+  float: left; /* 要素の左寄せ・回り込を指定する */
+  width: 100%; /* ボックスの横幅を指定する */
+  height: 45px; /* ボックスの高さを指定する */
+  padding-left: 5px; /* ボックス内左側の余白を指定する */
+  padding-right: 5px; /* ボックス内御右側の余白を指定する */
+  color: #696969; /* フォントの色を指定 */
+  background-color:#dcdcdc;
+  text-align: center; /* テキストのセンタリングを指定する */
+  line-height: 45px; /* 行の高さを指定する */
+  cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+}
+
+/*ここから下はFooter関連*/
+.footer-sentence{
+  font-size:15px;
+  font-family: "Avenir Next", sans-serif;
+  text-align:right;
+  padding-right: 20px;
+  float:right;
+  color:white;
+}
+
+.footer-logo{
+  float:left;
+  width:280px;
+  height:100px;
+}
+
+.footer {
+    background-color: #006600;
+    padding-top:40px;
+    width: 100%;
+    bottom: 0;
+    font-weight: lighter;
+    color: white;
+}
+
+.footer h3{
+    font-weight:lighter;
+}
+.footer ul{
+    padding-left:5px;
+    list-style:none;
+}
+.footer p{
+    text-align : justify;
+    font-size : 12px;
+}
+.footer iframe {
+    width:100%;
+    position:relative;
+    height:170px;
+}
+.sm{
+    list-style:none;
+    overflow:auto;
+}
+.sm li {
+    display: inline;
+    padding:5px;
+    float:left;
+}
+.sm li a img {
+    width:32px;
+}
+
+#hplink a:visited{
+  color:white;
+}
+
+@media screen and (max-width: 576px){
+  .main{
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .main-result{
+    margin: 0 5px;
+  }
