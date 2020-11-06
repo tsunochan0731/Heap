@@ -18,90 +18,94 @@
     transform: translateY(-50%);
 }
 
-nav {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+/*------------------------------
+
+  ここから下がハンバーガーメニュー
+  に関するCSS
+
+------------------------------*/
+
+/* チェックボックスは非表示に */
+.drawer-hidden {
+  display: none;
 }
 
-label {
-  width: 30px;
-  height: 30px;
-  border: 2px solid #ffffff;
-  position: absolute;
+/* ハンバーガーアイコンの設置スペース */
+.drawer-open {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 10px;
   right: 10px;
-  top: 12px;
-  z-index: 1000;
+  z-index: 100;/* 重なり順を一番上に */
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0);
 }
 
-span {
-  width: 20px;
-  height: 1px;
-  background-color: black;
-  position: absolute;
-  right: 15px;
-  transition: .3s;
-  z-index: 100;
+/* ハンバーガーメニューのアイコン */
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #ffffff;
+  transition: 0.5s;
+  position: fixed;
 }
 
-.span1 {
-  top: 20px;
-  background-color: #ffffff;
+/* 三本線のうち一番上の棒の位置調整 */
+.drawer-open span:before {
+  top: 30px;
 }
 
-.span2 {
-  top: 27px;
-  background-color: #ffffff;
+/* 三本線のうち一番下の棒の位置調整 */
+.drawer-open span:after {
+  top: 48px;
 }
 
-.span3 {
-  top: 34px;
-  background-color: #ffffff;
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer-check:checked ~ .drawer-open span {
+  background: rgba(255, 255, 255, 0);
 }
 
-#check:checked ~ .span2 {
-  display: none;
-}
-
-#check:checked ~ .span1 {
-  width: 27px;
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer-check:checked ~ .drawer-open span::before {
+  top: 39px;
   transform: rotate(45deg);
-  top: 27px;
-  right: 12px;
 }
 
-#check:checked ~ .span3 {
-  width: 27px;
+#drawer-check:checked ~ .drawer-open span::after {
+  top: 39px;
   transform: rotate(-45deg);
-  top: 27px;
-  right: 12px;
 }
 
-#check {
-  display: none;
-}
-
-ul {
+/* メニューのデザイン*/
+.drawer-content {
   width: 20%;
   height: 100%;
-  background-color: #2a9ee04a;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  list-style: none;
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: -100%;
-  transition: 1s;
-  z-index: 10;
+  left: 100%;/* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.6);
+  transition: .5s;
+  text-align: left;
 }
 
-li {
-  margin-top: 20px;
+.menu{
+  color: #ffffff;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
-#check:checked ~ ul {
-  right: 0;
+/* アイコンがクリックされたらメニューを表示 */
+#drawer-check:checked ~ .drawer-content {
+  left: 80%;/* メニューを画面に入れる */
 }
 
 /*main関連*/

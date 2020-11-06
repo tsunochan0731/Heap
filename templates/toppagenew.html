@@ -18,18 +18,31 @@
   <body>
     <div class="header">
       <div class="jumbotron jumbotron-fluid jumbotron-header">
-        <nav>
-          <input type="checkbox" id="check">
-          <span class="span1"></span>
-          <span class="span2"></span>
-          <span class="span3"></span>
-          <label for="check"></label>
-          <ul>
-            <li>メニュー１</li>
-            <li>メニュー２</li>
-            <li>メニュー３</li>
-          </ul>
-        </nav>
+        <div class="drawer">
+          <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+          <input type="checkbox" id="drawer-check" class="drawer-hidden" >
+          <!-- ハンバーガーアイコン -->
+          <label for="drawer-check" class="drawer-open"><span></span></label>
+          <!-- メニュー -->
+          <nav class="drawer-content">
+            <ul class="drawer-list">
+              <li class="drawer-item">
+                <a href="" class="menu">Top Page</a>
+              </li><!-- /.drawer-item -->
+              <li class="drawer-item">
+                <a href="" class="menu">Our Preventive Medicine Recommendation</a>
+              </li><!-- /.drawer-item -->
+              <li class="drawer-item">
+                <a href="" class="menu">Web Application</a>
+              <li class="drawer-item">
+                <a href="" class="menu">About Yuge Medical Clinic</a>
+              <li class="drawer-item">
+                <a href="" class="menu">About Shiga Center for Family Medicine</a>
+
+              </li><!-- /.drawer-item -->
+            </ul><!-- /.drawer-list -->
+          </nav>
+        </div>
         <div class="container-fluid jumbotron-container">
           <h1>予防医療・健康増進の情報ページ</h1>
           <h3>Information about preventive medicine</h3>
@@ -48,7 +61,7 @@
             </div>
           </div>
           <div class="col-sm-6">
-            <img src="/static/images/image1.jpg" class="img-fluid rounded">
+            <img src="/static/images/tanbo.jpg" class="img-fluid rounded">
           </div>
         </div>
         <div class="row topic" "height-adjust-area">
@@ -72,7 +85,7 @@
             <input type = "submit" value = "Use Application" onclick="location.href='index'" class="button-submit">
           </div>
           <div class="col-sm-6">
-            <img src="/static/images/image1.jpg" class="img-fluid rounded">
+            <img src="/static/images/conference.jpg" class="img-fluid rounded">
           </div>
         </div>
         <div class="row topic" "height-adjust-area">
