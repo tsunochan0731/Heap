@@ -4,6 +4,15 @@
   text-align:center;
 }
 
+.header h1{
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  font-size:60px;
+}
+
+.header h3{
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+}
+
 .jumbotron-header{
   background: url(/static/images/toppage1103.jpg);
   background-size: cover;
@@ -98,9 +107,38 @@
   text-align: left;
 }
 
+.drawer-content ul{
+  list-style: none;
+}
+
+.drawer-content li{
+  padding: 10px 0px;
+}
+
 .menu{
   color: #ffffff;
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.drawer-list {
+  padding: 50px 10px;
+}
+
+.header a {
+font-weight:bold;
+text-decoration:none;
+}
+.header a:link {
+color:#ffffff;
+}
+.header a:visited {
+color:#ffffff;
+}
+.header a:hover {
+color:#F2B077;
+}
+.header a:active {
+color:#F2B077;
 }
 
 /* アイコンがクリックされたらメニューを表示 */
@@ -116,62 +154,51 @@
   text-align:center;
 }
 
-.height-adjust{
-  overflow: auto;
-  scroll-snap-type: y mandatory;
-  height: 100vh;
-}
-.height-adjust-area {
-  scroll-snap-align: start;
-  height: 100vh;
+.heightadjust{
+  height: 75vh;
+  margin: 40px 20px;
 }
 
-.topic{
-  margin: 30px 0px;
+.color1{
+  background-color:#3c7639;
+}
+
+.color2{
+  background-color:#ff7c11;
+}
+
+.color3{
+  background-color:#b0c01f;
+}
+
+.heightadjust2{
+  display:flex;
+  flex-direction:column;
+  justify-content :center;
 }
 
 .subtitle{
-  font-size:20px;
-  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-  padding:20px 20px;
+  width: 100%;
+  font-size:35px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  padding:40px 20px;
   text-align:center;
-  border-top: 2px solid #006600;
-  background-color: #F0FFF0;
-  color:black;
-}
-
-.button-submit {
-  display       : inline-block;
-  font-size     : 18pt;
-  text-align    : center;
-  cursor        : pointer;
-  padding       : 12px 30px;
-  background: #006600;
-  color         : #ffffff;
-  transition    : .3s;
-  font-family: 'Montserrat', sans-serif;
-  margin:25px 0px;
-  border: none;
-}
-
-.button-submit:hover {
-  box-shadow    : none;
-  color         : #006600;
-  background    : #ffffff;
+  color:#ffffff;
 }
 
 .box {
-    padding: 0.2em 0.5em;
-    margin: 2em 0;
-    color: #565656;
-    background: #ffffff;
-    border: solid 2px #006600;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  color: #ffffff;
+  text-align:left;
 }
 
-.box p {
-    margin: 0;
-    padding: 0.5em 0.5em;
-    text-align:left;
+.img-size{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 div.changelog{
@@ -220,7 +247,7 @@ span{
   cursor        : pointer;
   padding       : 12px 10px;
   background: #ffffff;
-  color         : #006600;
+  color         : #3c7639;
   transition    : .3s;
   font-family: 'Montserrat', sans-serif;
   margin-top:20px;
@@ -231,7 +258,7 @@ span{
 .button-back :hover {
   box-shadow    : none;
   color         : #ffffff;
-  background    : #006600;
+  background    : #3c7639;
 }
 
 #disclaimer{
@@ -258,7 +285,7 @@ span{
 #disclaimer :hover {
   box-shadow    : none;
   color         : #ffffff;
-  background    : #006600;
+  background    : #3c7639;
 }
 
 #note{
@@ -285,7 +312,7 @@ span{
 #note :hover {
   box-shadow    : none;
   color         : #ffffff;
-  background    : #006600;
+  background    : #3c7639;
 }
 
 input {
@@ -307,7 +334,7 @@ input[type=radio]{
 }
 
 input:checked + label {
-  background: #006600;/* マウス選択時の背景色を指定する */
+  background: #3c7639;/* マウス選択時の背景色を指定する */
   color: #ffffff; /* マウス選択時のフォント色を指定する */
 }
 
@@ -342,7 +369,7 @@ input:checked + label {
 }
 
 .footer {
-    background-color: #006600;
+    background-color: #3c7639;
     padding-top:40px;
     width: 100%;
     bottom: 0;

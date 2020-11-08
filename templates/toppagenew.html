@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{url_for('static',filename = 'topnew.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="header">
@@ -27,17 +28,17 @@
           <nav class="drawer-content">
             <ul class="drawer-list">
               <li class="drawer-item">
-                <a href="" class="menu">Top Page</a>
+                <a href="" class="menu">トップページ</a>
               </li><!-- /.drawer-item -->
               <li class="drawer-item">
-                <a href="" class="menu">Our Preventive Medicine Recommendation</a>
+                <a href="" class="menu">滋賀家庭医療学センターによる予防医療の一覧</a>
               </li><!-- /.drawer-item -->
               <li class="drawer-item">
-                <a href="" class="menu">Web Application</a>
+                <a href="" class="menu">ウェブアプリケーション</a>
               <li class="drawer-item">
-                <a href="" class="menu">About Yuge Medical Clinic</a>
+                <a href="https://yugemed.com" class="menu">弓削メディカルクリニックについて</a>
               <li class="drawer-item">
-                <a href="" class="menu">About Shiga Center for Family Medicine</a>
+                <a href="https://scfm.jp" class="menu">滋賀家庭医療学センターについて</a>
 
               </li><!-- /.drawer-item -->
             </ul><!-- /.drawer-list -->
@@ -45,30 +46,31 @@
         </div>
         <div class="container-fluid jumbotron-container">
           <h1>予防医療・健康増進の情報ページ</h1>
-          <h3>Information about preventive medicine</h3>
+          <h3>Information about Preventive Medicine</h3>
+          <h3>Presented by SCFM</h3>
         </div>
       </div>
     </div>
 
     <!-- 以下main -->
     <div class="main">
-      <div class="container" "height-adjust">
-        <div class="row topic" "height-adjust-area">
-          <div class="col-sm-6">
+      <div class="container">
+        <div class="row topic heightadjust color1">
+          <div class="col-sm-6 heightadjust2">
             <h2 class="subtitle">予防医療とは？</h2>
             <div class="box">
               <p>予防医療・ヘルスメンテナンスは、健康を維持・増進するために医療者が患者に対して積極的に行う推奨・勧奨のことであり、スクリーニング、カウンセリング、予防接種、予防的内服に分類されます。どのような項目が推奨されるかについては、米国予防医学専門委員会(USPSTF)のホームページ、日本プライマリケア連合学会による「根拠に基づく予防医療推奨サイト」、国立がん研究センターの提供する「科学的根拠に基づくがん検診推進のページ」などが参考になります</p>
             </div>
           </div>
-          <div class="col-sm-6">
-            <img src="/static/images/tanbo.jpg" class="img-fluid rounded">
+          <div class="col-sm-6 heightadjust2">
+            <img src="/static/images/tanbo.jpg" class="img-fluid rounded img-size">
           </div>
         </div>
-        <div class="row topic" "height-adjust-area">
-          <div class="col-sm-6">
-            <img src="/static/images/image2.jpg" class="img-fluid rounded">
+        <div class="row topic heightadjust color2">
+          <div class="col-sm-6 heightadjust2">
+            <img src="/static/images/image2.jpg" class="img-fluid rounded img-size">
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 heightadjust2">
             <h2 class="subtitle">予防医療の抱える問題</h2>
             <div class="box">
               <p>米国と日本における考え方や検査体制の違いもあり、実際にどのような検査を患者に推奨するか悩まれた方は多いと思います。また、実際に予防医療・ヘルスメンテナンスを患者に適用するためには、どこでその検査が受けられるのか、いつその検査が受けられるのか、費用はいくらかかるのかなど、周囲の検査・医療リソースや日本における公的補助の体制についても把握する必要があります。</p>
@@ -76,19 +78,19 @@
             <input type = "submit" value = "See Our Recommendation" class="button-submit">
           </div>
         </div>
-        <div class="row topic" "height-adjust-area">
-          <div class="col-sm-6">
+        <div class="row topic heightadjust color3">
+          <div class="col-sm-6 heightadjust2">
             <h2 class="subtitle">ウェブアプリケーションについて</h2>
             <div class="box">
               <p>予防医療・ヘルスメンテナンスは、健康を維持・増進するために医療者が患者に対して積極的に行う推奨・勧奨のことであり、スクリーニング、カウンセリング、予防接種、予防的内服に分類されます。どのような項目が推奨されるかについては、米国予防医学専門委員会(USPSTF)のホームページ、日本プライマリケア連合学会による「根拠に基づく予防医療推奨サイト」、国立がん研究センターの提供する「科学的根拠に基づくがん検診推進のページ」などが参考になります</p>
             </div>
             <input type = "submit" value = "Use Application" onclick="location.href='index'" class="button-submit">
           </div>
-          <div class="col-sm-6">
-            <img src="/static/images/conference.jpg" class="img-fluid rounded">
+          <div class="col-sm-6 heightadjust2">
+            <img src="/static/images/conference.jpg" class="img-fluid rounded img-size">
           </div>
         </div>
-        <div class="row topic" "height-adjust-area">
+        <div class="row topic">
           <div class="col-sm-12">
             <h2 class="subtitle">更新履歴</h2>
             <div class="changelog">
