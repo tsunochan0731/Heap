@@ -1,4 +1,4 @@
-/*header関連*/
+/*以下header関連*/
 .header {
   color:white;
   text-align:center;
@@ -13,11 +13,19 @@
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
 
-.jumbotron-header{
+.jumbotron-header1{
   background: url(/static/images/toppage1103.jpg);
   background-size: cover;
   position: relative;
   height: 100vh;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.jumbotron-header2{
+  background: url(/static/images/recommendationbackground.jpg);
+  background-size: cover;
+  position: relative;
+  height: 75vh;
   font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -27,14 +35,7 @@
     transform: translateY(-50%);
 }
 
-/*------------------------------
-
-  ここから下がハンバーガーメニュー
-  に関するCSS
-
-------------------------------*/
-
-/* チェックボックスは非表示に */
+/*以下ハンバーガーメニュー関連*/
 .drawer-hidden {
   display: none;
 }
@@ -146,7 +147,7 @@ color:#F2B077;
   left: 80%;/* メニューを画面に入れる */
 }
 
-/*main関連*/
+/*以下main関連*/
 .main{
   font-size:15px;
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
@@ -154,11 +155,17 @@ color:#F2B077;
   text-align:center;
 }
 
-.heightadjust{
-  height: 75vh;
-  margin: 40px 20px;
+body{
+  padding: 0px;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
 
+span{
+  text-align: center
+}
+
+/*以下subtitle関連*/
 .color1{
   background-color:#3c7639;
 }
@@ -181,7 +188,7 @@ color:#F2B077;
   width: 100%;
   font-size:35px;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-  padding:40px 20px;
+  padding:20px 20px;
   text-align:center;
   color:#ffffff;
 }
@@ -190,68 +197,70 @@ color:#F2B077;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   color: #ffffff;
   text-align:left;
+  padding: 10px 30px;
+  line-height:1.7;
 }
 
-.img-size{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+/*以下更新関連*/
 div.changelog{
   width: 60%;
   height: 200px;
   overflow-y: scroll;
-  border: 2px dashed #888;
-  margin: 0px auto;
-}
-
-body{
-  padding: 0px;
+  border: 2px solid 3c7639;
+  margin: 0 0 30px 0;
+  padding: 10px 20px;
   background-color: #ffffff;
-  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  display: inline-block;
+  text-align: left;
 }
 
-span{
-  text-align: center
+.update{
+  background-image: url("/static/images/kabe2.png");
+  text-align: center;
 }
 
+.topic{
+  margin : 60px 0px;
+}
+
+/*以下subtitleのボタン関連*/
 .button-submit {
   display       : inline-block;
-  font-size     : 18pt;
+  font-size: 18px;
   text-align    : center;
   cursor        : pointer;
-  padding       : 12px 30px;
-  background: #F2B077;
+  padding       : 12px 20px;
+  background: #d84914;
+  border-bottom: solid 4px #AB3707;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 6px;
   color         : #ffffff;
-  transition    : .3s;
-  font-family: 'Montserrat', sans-serif;
-  margin:25px 0px;
-  border: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  margin:12px 0px;
 }
 
 .button-submit:hover {
-  box-shadow    : none;
+  margin-top: 16px;
   color         : #ffffff;
-  background    : #D9CB04;
+  background    : #f56500;
+  border-bottom: none;
 }
 
 .button-back{
   display       : inline-block;
-  font-size     : 12pt;
+  font-size     : 18pt;
+  font-weight: bold;
   text-align    : center;
   float: right;
   cursor        : pointer;
   padding       : 12px 10px;
+  margin: 20px 0 35px 0;
   background: #ffffff;
   color         : #3c7639;
   transition    : .3s;
-  font-family: 'Montserrat', sans-serif;
-  margin-top:20px;
-  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   border: none;
 }
 
@@ -319,8 +328,6 @@ input {
   background-color: #f5f5f5;
 }
 
-
-
 .item {
   float:left;
   text-align: left;
@@ -328,6 +335,137 @@ input {
   color:#666666;
   margin-top:25px;
 }
+
+.explanationa{
+  text-align: left;
+  border: dashed 4px #3c7639;
+  padding: 10px 20px;
+}
+
+.explanationb{
+  text-align: left;
+  border: dashed 4px #ff7c11;
+  padding: 10px 20px;
+}
+
+.explanationc{
+  text-align: left;
+  border: dashed 4px #b0c01f;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+
+/*以下矢印記号関連*/
+.arrow{
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 22px;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+.arrow::before,
+.arrow::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+
+.arrowa::before{
+  width: 18px;
+  height: 18px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #3c7639;
+}
+
+.arrowa::after{
+  left: 8px;
+  box-sizing: border-box;
+  width: 5px;
+  height: 5px;
+  border: 3px solid transparent;
+  border-left: 3px solid #fff;
+}
+
+.arrowb::before{
+  width: 18px;
+  height: 18px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #ff7c11;
+}
+
+.arrowb::after{
+  left: 8px;
+  box-sizing: border-box;
+  width: 5px;
+  height: 5px;
+  border: 3px solid transparent;
+  border-left: 3px solid #fff;
+}
+
+.arrowc::before{
+  width: 18px;
+  height: 18px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #b0c01f;
+}
+
+.arrowc::after{
+  left: 8px;
+  box-sizing: border-box;
+  width: 5px;
+  height: 5px;
+  border: 3px solid transparent;
+  border-left: 3px solid #fff;
+}
+
+.arrowback{
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 22px;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.arrowback::before,
+.arrowback::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+
+.arrowback::before{
+  width: 18px;
+  height: 18px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #3c7639;
+}
+
+.arrowback::after{
+  left: 4px;
+  box-sizing: border-box;
+  width: 5px;
+  height: 5px;
+  border: 3px solid transparent;
+  border-right: 3px solid #fff;
+}
+
+
 
 input[type=radio]{
   display:none;
@@ -355,7 +493,6 @@ input:checked + label {
 /*ここから下はFooter関連*/
 .footer-sentence{
   font-size:15px;
-  font-family: "Avenir Next", sans-serif;
   text-align:right;
   padding-right: 20px;
   float:right;
@@ -370,23 +507,24 @@ input:checked + label {
 
 .footer {
     background-color: #3c7639;
-    padding-top:40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+    padding-top:50px;
     width: 100%;
     bottom: 0;
-    font-weight: lighter;
     color: white;
 }
 
-.footer h3{
-    font-weight:lighter;
-}
 .footer ul{
     padding-left:5px;
     list-style:none;
+    font-weight: lighter;
+    text-align : left;
 }
 .footer p{
     text-align : justify;
     font-size : 12px;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-weight: normal;
 }
 .footer iframe {
     width:100%;
@@ -408,6 +546,14 @@ input:checked + label {
 
 #hplink a:visited{
   color:white;
+}
+
+.lastone p{
+  border-top: solid 1px #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 30px 10px;
+  margin: 20px 10px;
 }
 
 @media screen and (max-width: 576px){

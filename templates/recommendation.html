@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:url" content="https://scfm-hm.appspot.com/index"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="SCFM Health Maintenance App"/>
+    <meta property="og:image" content="https://scfm-hm.appspot.com/static/images/OGP.jpg"/>
+    <meta property="og:description" content=“滋賀家庭医療学センター(SCFM)によるヘルスメンテナンスのホームページです”/>
+    <title>SCFM Health Maintenance</title>
+    <!-- <link rel="stylesheet" href="../static/style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'topnew.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      <div class="jumbotron jumbotron-fluid jumbotron-header2">
+        <div class="drawer">
+          <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+          <input type="checkbox" id="drawer-check" class="drawer-hidden" >
+          <!-- ハンバーガーアイコン -->
+          <label for="drawer-check" class="drawer-open"><span></span></label>
+          <!-- メニュー -->
+          <nav class="drawer-content">
+            <ul class="drawer-list">
+              <li class="drawer-item">
+                <a href="toppagenew" class="menu">トップページ</a>
+              </li><!-- /.drawer-item -->
+              <li class="drawer-item">
+                <a href="recommendation" class="menu">滋賀家庭医療学センターによる予防医療の一覧</a>
+              </li><!-- /.drawer-item -->
+              <li class="drawer-item">
+                <a href="index" class="menu">ウェブアプリケーション</a>
+              <li class="drawer-item">
+                <a href="https://yugemed.com" class="menu">弓削メディカルクリニックについて</a>
+              <li class="drawer-item">
+                <a href="https://scfm.jp" class="menu">滋賀家庭医療学センターについて</a>
+
+              </li><!-- /.drawer-item -->
+            </ul><!-- /.drawer-list -->
+          </nav>
+        </div>
+        <div class="container-fluid jumbotron-container">
+          <h1>予防医療・健康増進の情報ページ</h1>
+          <h3>Information about Preventive Medicine</h3>
+          <h3>Presented by SCFM</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- 以下main -->
+    <div class="main">
+      <div class="container">
+        <div class="row topic color1">
+          <div class="col-sm-12">
+            <h2 class="subtitle">悪性腫瘍スクリーニング</h2>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="explanationa">
+            <dl>
+            {% for i in allcancers %}
+            <dt><h2 class="arrow arrowa">{{ i.split('\n')[0] }}</h2></dt>
+            <dd><p>{{ i.split('\n')[1] }}</p></dd>
+            <div class="row">
+              <div class="col-12">
+                <p style="text-align: center;">
+                  <button class="btn btn-primary" id="note" type="button" data-toggle="collapse" data-target="#collapseExample-{{loop.index0}}" aria-expanded="false" aria-controls="collapseExample">
+                  Notes
+                  </button>
+                </p>
+                <div class="collapse" id="collapseExample-{{loop.index0}}">
+                  <div class="card card-body font-small">
+                    {% set s = i.split('\n')[2] | string() %}
+                    {% for sentence in s.split('<br>') %}
+                    <li>{{ sentence }}</li>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p></p>
+            {% endfor %}
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+          <div class="row topic color2">
+            <div class="col-sm-12">
+              <h2 class="subtitle">その他のスクリーニング・カウンセリング・予防的投与</h2>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="explanationb">
+              <dl>
+              {% for i in allothers %}
+              <dt><h2 class="arrow arrowb">{{ i.split('\n')[0] }}</h2></dt>
+              <dd><p>{{ i.split('\n')[1] }}</p></dd>
+              <div class="row">
+                <div class="col-12">
+                  <p style="text-align: center;">
+                    <button class="btn btn-primary" id="note" type="button" data-toggle="collapse" data-target="#collapseExample-{{loop.index0}}" aria-expanded="false" aria-controls="collapseExample">
+                    Notes
+                    </button>
+                  </p>
+                  <div class="collapse" id="collapseExample-{{loop.index0}}">
+                    <div class="card card-body font-small">
+                      {% set s = i.split('\n')[2] | string() %}
+                      {% for sentence in s.split('<br>') %}
+                      <li>{{ sentence }}</li>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p></p>
+              {% endfor %}
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+            <div class="row topic color3">
+              <div class="col-sm-12">
+                <h2 class="subtitle">ワクチン</h2>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="explanationc">
+                <dl>
+                {% for i in allimmunizations %}
+                <dt><h2 class="arrow arrowc">{{ i.split('\n')[0] }}</h2></dt>
+                <dd><p>{{ i.split('\n')[1] }}</p></dd>
+                <div class="row">
+                  <div class="col-12">
+                    <p style="text-align: center;">
+                      <button class="btn btn-primary" id="note" type="button" data-toggle="collapse" data-target="#collapseExample-{{loop.index0}}" aria-expanded="false" aria-controls="collapseExample">
+                      Notes
+                      </button>
+                    </p>
+                    <div class="collapse" id="collapseExample-{{loop.index0}}">
+                      <div class="card card-body font-small">
+                        {% set s = i.split('\n')[2] | string() %}
+                        {% for sentence in s.split('<br>') %}
+                        <li>{{ sentence }}</li>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p></p>
+                {% endfor %}
+                </dl>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="button" class="button-back arrowback" onclick="location.href='toppagenew'">Back to the Toppage</button>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 以下footer -->
+          <div class="footer">
+            <div class="container">
+            <div class="row">
+              <div class="col-md-4" >
+        		    <h4>SCFMについて</h4>
+        		    <p>
+        		       滋賀家庭医療学センター(SCFM)は、医療法人社団弓削メディカルクリニックを統括施設/経営母体とする団体です。主に家庭医療にまつわる臨床・教育事業を質高く展開し、良質な医療として社会に還元していきます。特にメインの事業として、「家庭医/総合診療医の養成」を掲げており、この地から良質な家庭医を数多く育てていけるよう、日夜努力しております。 
+        		    </p>
+                <a href="https://scfm.jp"><img src="/static/images/SCFM1.png" class="footer-logo img-fluid"></a>
+              </div>
+              <div class="col-md-4">
+                <h4>所在地</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.7384303296!2d136.1174659508822!3d35.08826776977322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60017b43b7ad455f%3A0x301d1be235277d19!2z5byT5YmK44Oh44OH44Kj44Kr44Or44Kv44Oq44OL44OD44Kv77yI5Yy755mC5rOV5Lq656S-5Zuj77yJ5Zyo5a6F5Yy755mC6YOo!5e0!3m2!1sja!2sjp!4v1597480432814!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <ul class="sm">
+                   <li><a href="https://www.facebook.com/scfm.jp/" ><img src="https://www.facebook.com/images/fb_icon_325x325.png" class="img-fluid"></a></li>
+                   <li><a href="#" ><img src="http://playbookathlete.com/wp-content/uploads/2016/10/twitter-logo-4.png" class="img-fluid" ></a></li>
+               </ul>
+        		  </div>
+              <div class="col-md-4" >
+                <h4>連絡先</h4>
+                <ul>
+        		        <li>Phone : 0748 - 57 - 1141</li>
+        		        <li>E-mail : scfm-tsunoda@yugemed-scfm.com</li>
+                    <li id="hplink"><a href="https://scfm.jp">homepage : https://scfm.jp</a></li>
+        		    </ul>
+        		    <p>
+        		        このホームページは滋賀家庭医療学センターとHideki Tsunodaによって管理されています。もし、ご質問・ご意見がございましたら、上記までご一報ください。
+        		    </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 lastone" >
+                <p>Copyright © Shiga Center for Family Medicine. All Right Reserved.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        </body>
+      </html>

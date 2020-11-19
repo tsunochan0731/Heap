@@ -22,6 +22,43 @@ def index():
 def toppage():
     return render_template('toppagenew.html', title='health maintenance')
 
+@app.route("/recommendation")
+def recommendation():
+    allcancers = list()
+    allothers = list()
+    allimmunizations = list()
+
+    allcancers.append(cancers.colon_ca())
+    allcancers.append(cancers.gastric_ca())
+    allcancers.append(cancers.breast_ca())
+    allcancers.append(cancers.cervical_ca())
+    allcancers.append(cancers.lung_ca())
+    allcancers.append(cancers.prostate_ca())
+
+    allothers.append(others.smoking())
+    allothers.append(others.osteopolosis())
+    allothers.append(others.hypertention())
+    allothers.append(others.falling())
+    allothers.append(others.aneurysm())
+    allothers.append(others.diabetes())
+    allothers.append(others.hyperlipidemia())
+    allothers.append(others.depression())
+    allothers.append(others.STD_1())
+    allothers.append(others.STD_2())
+    allothers.append(others.alcohol())
+    allothers.append(others.obesity())
+    allothers.append(others.hepatitis())
+    allothers.append(others.folate())
+
+    allimmunizations.append(immunizations.pneumococcus())
+    allimmunizations.append(immunizations.flu())
+    allimmunizations.append(immunizations.tetanus())
+    allimmunizations.append(immunizations.HPV())
+    allimmunizations.append(immunizations.HBV())
+    allimmunizations.append(immunizations.Zoster())
+
+    return render_template('recommendation.html', title='health maintenance', allcancers=allcancers, allothers=allothers, allimmunizations=allimmunizations)
+
 #POSTの時の処理
 #returnの前でも返せない。なぜ？
 @app.route("/result", methods=['POST'])
