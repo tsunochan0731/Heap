@@ -150,6 +150,7 @@ color:#F2B077;
 /*以下swiper関連*/
 .swiper-container {
     height: 100vh;
+    width: 100%;
 }
 
 .swiper-title {
