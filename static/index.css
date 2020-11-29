@@ -3,6 +3,119 @@
   text-align:center;
 }
 
+/*以下ハンバーガーメニュー関連*/
+.drawer-hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer-open {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;/* 重なり順を一番上に */
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0);
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #F2B077;
+  transition: 0.5s;
+  position: fixed;
+  z-index:1001;
+}
+
+/* 三本線のうち一番上の棒の位置調整 */
+.drawer-open span:before {
+  top: 30px;
+}
+
+/* 三本線のうち一番下の棒の位置調整 */
+.drawer-open span:after {
+  top: 48px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer-check:checked ~ .drawer-open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer-check:checked ~ .drawer-open span::before {
+  top: 39px;
+  transform: rotate(45deg);
+}
+
+#drawer-check:checked ~ .drawer-open span::after {
+  top: 39px;
+  transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.drawer-content {
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;/* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.6);
+  transition: .5s;
+  text-align: left;
+}
+
+.drawer-content ul{
+  list-style: none;
+}
+
+.drawer-content li{
+  padding: 10px 0px;
+}
+
+.menu{
+  color: #ffffff;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.drawer-list {
+  padding: 50px 10px;
+}
+
+.header a {
+font-weight:bold;
+text-decoration:none;
+}
+.header a:link {
+color:#ffffff;
+}
+.header a:visited {
+color:#ffffff;
+}
+.header a:hover {
+color:#F2B077;
+}
+.header a:active {
+color:#F2B077;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer-check:checked ~ .drawer-content {
+  left: 80%;/* メニューを画面に入れる */
+}
+
 .thema{
   font-size:20px;
   font-family: 'Montserrat', sans-serif;
@@ -211,7 +324,7 @@ input:checked + label {
 }
 
 .footer {
-    background-color: #006600;
+    background-color: #3c7639;
     padding-top:40px;
     width: 100%;
     bottom: 0;

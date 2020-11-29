@@ -15,11 +15,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+    <!-- Swiper files -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+
+    <!-- javascriptファイル -->
+    <script src="/static/js/auto-load-anchor.js"></script>
   </head>
   <body>
     <div class="header">
-      <div class="jumbotron jumbotron-fluid jumbotron-header1">
-        <div class="drawer">
+      <div class="header-menu-before">
+        <p>Shiga Centor for Family Medicine</p>
+      </div>
+      <div class="drawer">
           <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
           <input type="checkbox" id="drawer-check" class="drawer-hidden" >
           <!-- ハンバーガーアイコン -->
@@ -31,7 +38,7 @@
                 <a href="" class="menu">トップページ</a>
               </li><!-- /.drawer-item -->
               <li class="drawer-item">
-                <a href="recommendation" class="menu">滋賀家庭医療学センターによる予防医療の一覧</a>
+                <a href="recommendation" class="menu">予防医療の推奨項目一覧</a>
               </li><!-- /.drawer-item -->
               <li class="drawer-item">
                 <a href="index" class="menu">ウェブアプリケーション</a>
@@ -44,12 +51,51 @@
             </ul><!-- /.drawer-list -->
           </nav>
         </div>
-        <div class="container-fluid jumbotron-container">
-          <h1>予防医療・健康増進の情報ページ</h1>
-          <h3>Information about Preventive Medicine</h3>
-          <h3>Presented by SCFM</h3>
+
+
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="/static/images/swiper1.jpg" class="img-fluid">
+                  <div class="swiper-title">
+                    <h2>医療従事者のための</h2>
+                    <h1>予防医療の情報ページ</h1>
+                    <h3>Information about Preventive Medicine Presented by SCFM</h3>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="/static/images/swiper2.jpg" class="img-fluid">
+                  <div class="swiper-title">
+                    <h2>医療従事者のための</h2>
+                    <h1>予防医療の情報ページ</h1>
+                    <h3>Information about Preventive Medicine Presented by SCFM</h3>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="/static/images/swiper3.jpg" class="img-fluid">
+                  <div class="swiper-title">
+                    <h2>医療従事者のための</h2>
+                    <h1>予防医療の情報ページ</h1>
+                    <h3>Information about Preventive Medicine Presented by SCFM</h3>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="/static/images/swiper4.jpg" class="img-fluid">
+                  <div class="swiper-title">
+                    <h2>医療従事者のための</h2>
+                    <h1>予防医療の情報ページ</h1>
+                    <h3>Information about Preventive Medicine Presented by SCFM</h3>
+                  </div>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
         </div>
-      </div>
     </div>
 
     <!-- 以下main -->
@@ -57,36 +103,36 @@
       <div class="container">
         <div class="row topic color1">
           <div class="col-sm-6 heightadjust2">
-            <h2 class="subtitle">予防医療とは？</h2>
-            <div class="box">
+            <h2 class="subtitle initial-caption">予防医療とは？</h2>
+            <div class="box initial-text">
               <p>予防医療・ヘルスメンテナンスは、健康を維持・増進するために医療者が患者に対して積極的に行う推奨・勧奨のことであり、スクリーニング、カウンセリング、予防接種、予防的内服に分類されます。どのような項目が推奨されるかについては、米国予防医学専門委員会(USPSTF)のホームページ、日本プライマリケア連合学会による「根拠に基づく予防医療推奨サイト」、国立がん研究センターの提供する「科学的根拠に基づくがん検診推進のページ」などが参考になります</p>
             </div>
           </div>
-          <div class="col-sm-6 heightadjust2">
+          <div class="col-sm-6 heightadjust2 initial-image">
             <img src="/static/images/center.jpg" class="img-fluid">
           </div>
         </div>
         <div class="row topic color2">
-          <div class="col-sm-6 heightadjust2">
+          <div class="col-sm-6 heightadjust2 initial-imagea">
             <img src="/static/images/room.jpg" class="img-fluid">
           </div>
           <div class="col-sm-6 heightadjust2">
-            <h2 class="subtitle">当院での推奨</h2>
-            <div class="box">
+            <h2 class="subtitle initial-captiona">当院での推奨</h2>
+            <div class="box initial-texta">
               <p>しかし、実際には米国と日本における推奨や検査体制の差異もあり、どのような検査を患者に推奨するか悩まれる方は多いと思います。また、予防医療・ヘルスメンテナンスを患者に適用するためには、どこでその検査が受けられるのか、いつその検査が受けられるのか、費用はいくらかかるのかなど、周囲の医療リソースや日本における助成体制についても理解する必要があります。そこで、滋賀家庭医療学センターは当センターで実践している予防医療の一覧をオンラインで公開することにしました。</p>
             </div>
-            <input type = "submit" value = "当院での推奨項目一覧へ" onclick="location.href='recommendation'" class="button-submit">
+            <input type = "submit" value = "当院での推奨項目一覧へ" onclick="location.href='recommendation'" class="button-submit initial-buttona">
           </div>
         </div>
         <div class="row topic color3">
           <div class="col-sm-6 heightadjust2">
-            <h2 class="subtitle">ウェブアプリケーションについて</h2>
-            <div class="box">
+            <h2 class="subtitle initial-captionb">ウェブアプリケーションについて</h2>
+            <div class="box initial-textb">
               <p>忙しい外来業務の中では、予防医療はどうしても後回しになってしまいがちです。また、推奨される項目が多いほど、その推奨に漏れが生じてきてしまいます。そこで、当センターでは患者の情報を入力すると、その患者に推奨される予防医療の項目一覧を見ることができるウェブアプリケーションを作成・リリースしました。このアプリケーションが皆さまの日々の診療における予防医療実践の一助になれば幸いです。</p>
             </div>
-            <input type = "submit" value = "ウェブアプリケーションへ" onclick="location.href='index'" class="button-submit">
+            <input type = "submit" value = "ウェブアプリケーションへ" onclick="location.href='index'" class="button-submit initial-buttonb">
           </div>
-          <div class="col-sm-6 heightadjust2">
+          <div class="col-sm-6 heightadjust2 initial-imageb">
             <img src="/static/images/conference2.jpg" class="img-fluid">
           </div>
         </div>
@@ -149,5 +195,114 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Swiperのスクリプト部 -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <!-- auto-load-anchorのスクリプト部 -->
+    <script>
+      let obj = new AutoLoadAnchor({
+        // 表示起点の対象になる要素をセレクタで指定する。
+        // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
+        // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
+        anchorSelector: '.color1',
+        // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
+        func: (target) => {
+          // それぞれの要素にanimatedクラスを付与する。
+          // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
+          target.querySelector('.initial-image').classList.add('animated');
+          target.querySelector('.initial-caption').classList.add('animated');
+          target.querySelector('.initial-text').classList.add('animated');
+        },
+        // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
+        anchorPoint: "bottom",
+      })
+      </script>
+      <script>
+      let obj1 = new AutoLoadAnchor({
+        // 表示起点の対象になる要素をセレクタで指定する。
+        // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
+        // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
+        anchorSelector: '.color2',
+        // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
+        func: (target) => {
+          // それぞれの要素にanimatedクラスを付与する。
+          // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
+          target.querySelector('.initial-imagea').classList.add('animated');
+          target.querySelector('.initial-captiona').classList.add('animated');
+          target.querySelector('.initial-texta').classList.add('animated');
+          target.querySelector('.initial-buttona').classList.add('animated');
+        },
+        // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
+        anchorPoint: "bottom",
+      })
+    </script>
+    <script>
+    let obj2 = new AutoLoadAnchor({
+      // 表示起点の対象になる要素をセレクタで指定する。
+      // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
+      // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
+      anchorSelector: '.color3',
+      // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
+      func: (target) => {
+        // それぞれの要素にanimatedクラスを付与する。
+        // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
+        target.querySelector('.initial-imageb').classList.add('animated');
+        target.querySelector('.initial-captionb').classList.add('animated');
+        target.querySelector('.initial-textb').classList.add('animated');
+        target.querySelector('.initial-buttonb').classList.add('animated');
+      },
+      // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
+      anchorPoint: "bottom",
+    })
+  </script>
+  <script>
+  // ここからはヘッダーメニューのJS。
+  let obj3 = new AutoLoadAnchor({
+    // 表示起点の対象になる要素をセレクタで指定する。
+    // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
+    // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
+    anchorSelector: '.color1',
+    // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
+    func: (target) => {
+      // それぞれの要素にanimatedクラスを付与する。
+      // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
+      target.querySelector('.header-menu-before').classList.add('animated-header');
+    },
+    // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
+    anchorPoint: "top",
+  })
+  </script>
+  <script>
+  var mySwiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+    spaceBetween: 30,
+    effect: 'fade',
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+    // ここからは自分が足したもの
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+    speed: 3000,
+  })
+  </script>
   </body>
 </html>

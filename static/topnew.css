@@ -13,12 +13,11 @@
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
 
-.jumbotron-header1{
-  background: url(/static/images/toppage1103.jpg);
-  background-size: cover;
-  position: relative;
-  height: 100vh;
-  font-family: 'Noto Sans JP', sans-serif;
+.header-menu-before p{
+  vertical-align:middle;
+  float: left;
+  font-size:20px;
+  padding: 25px 0px;
 }
 
 .jumbotron-header2{
@@ -38,6 +37,7 @@
 /*以下ハンバーガーメニュー関連*/
 .drawer-hidden {
   display: none;
+  z-index: 1001;/* 重なり順を一番上に */
 }
 
 /* ハンバーガーアイコンの設置スペース */
@@ -50,7 +50,7 @@
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index: 100;/* 重なり順を一番上に */
+  z-index: 1001;/* 重なり順を一番上に */
   cursor: pointer;
   background: rgba(255, 255, 255, 0);
 }
@@ -64,7 +64,7 @@
   height: 3px;
   width: 25px;
   border-radius: 3px;
-  background: #ffffff;
+  background: #F2B077;
   transition: 0.5s;
   position: fixed;
 }
@@ -145,6 +145,23 @@ color:#F2B077;
 /* アイコンがクリックされたらメニューを表示 */
 #drawer-check:checked ~ .drawer-content {
   left: 80%;/* メニューを画面に入れる */
+}
+
+/*以下swiper関連*/
+.swiper-container {
+    height: 100vh;
+}
+
+.swiper-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  text-shadow: #3c7639 1px 0 10px;
 }
 
 /*以下main関連*/
@@ -472,7 +489,7 @@ input[type=radio]{
 }
 
 input:checked + label {
-  background: #3c7639;/* マウス選択時の背景色を指定する */
+  background-color: transparent;/* マウス選択時の背景色を指定する */
   color: #ffffff; /* マウス選択時のフォント色を指定する */
 }
 
@@ -566,3 +583,147 @@ input:checked + label {
   .main-result{
     margin: 0 5px;
   }
+}
+
+/* フェードイン表示のための指定 */
+
+.topic{
+  /* transformした際に領域からはみ出した部分は表示しないようにする */
+  overflow: hidden;
+}
+
+/* 画像の初期状態 */
+.initial-image{
+  /* 初期状態。不透明度を0にし、translateで横にずらしておく。 */
+  opacity: 0;
+  transform: translate(440px,0);
+  /* transitionの設定。アニメーションの動きを設定する。 */
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 0s; /* 最初に動く要素は遅延をかけない。*/
+}
+/* テキストキャプションの初期状態 */
+.initial-caption{
+  /* 初期状態。不透明度を0にし、translateで下にずらしておく。 */
+  opacity: 0;
+  transform: translate(0,100px);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 0.5s; /* 設定値が変更されたあと、実際に変化が始まるのが0.5秒後 */
+}
+/* テキスト本文の初期状態 */
+.initial-text{
+  /* 初期状態。不透明度を0にし、translateで下にずらしておく。 */
+  opacity: 0;
+  transform: translate(0,100px);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 1s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
+}
+
+.initial-imagea{
+  /* 初期状態。不透明度を0にし、translateで横にずらしておく。 */
+  opacity: 0;
+  transform: translate(-440px,0);
+  /* transitionの設定。アニメーションの動きを設定する。 */
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 0s; /* 最初に動く要素は遅延をかけない。*/
+}
+/* テキストキャプションの初期状態 */
+.initial-captiona{
+  /* 初期状態。不透明度を0にし、translateで下にずらしておく。 */
+  opacity: 0;
+  transform: translate(0,100px);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 0.5s; /* 設定値が変更されたあと、実際に変化が始まるのが0.5秒後 */
+}
+/* テキスト本文の初期状態 */
+.initial-texta{
+  /* 初期状態。不透明度を0にし、translateで下にずらしておく。 */
+  opacity: 0;
+  transform: translate(0,100px);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 1s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
+}
+
+.initial-buttona{
+  /* 初期状態。不透明度を0にし、translateで下にずらしておく。 */
+  opacity: 0;
+  transform: translate(0,100px);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 1.5s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
+}
+
+.initial-imageb{
+  /* 初期状態。不透明度を0にし、translateで横にずらしておく。 */
+  opacity: 0;
+  transform: translate(440px,0);
+  /* transitionの設定。アニメーションの動きを設定する。 */
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 0s; /* 最初に動く要素は遅延をかけない。*/
+}
+
+.initial-captionb{
+  /* 初期状態。不透明度を0にし、translateで下にずらしておく。 */
+  opacity: 0;
+  transform: translate(0,100px);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 0.5s; /* 設定値が変更されたあと、実際に変化が始まるのが0.5秒後 */
+}
+/* テキスト本文の初期状態 */
+.initial-textb{
+  /* 初期状態。不透明度を0にし、translateで下にずらしておく。 */
+  opacity: 0;
+  transform: translate(0,100px);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 1s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
+}
+
+.initial-buttonb{
+  /* 初期状態。不透明度を0にし、translateで下にずらしておく。 */
+  opacity: 0;
+  transform: translate(0,100px);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 1.5s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
+}
+
+/* 画面内に表示された際に指定するスタイル。*/
+.animated{
+  /* 不透明度とtranslateで移動させた状態を元の値に戻す */
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+.header-menu-before{
+  background:transparent;
+  color: #ffffff;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.animated-header{
+  background:#3c7639;
+}
