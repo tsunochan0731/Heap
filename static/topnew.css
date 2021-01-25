@@ -13,15 +13,15 @@
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
 
-.header-menu-before p{
-  vertical-align:middle;
-  float: left;
-  font-size:20px;
-  padding: 25px 0px;
+.header-logo{
+  display: block;
+  width: 210px;
+  height: 80px;
+  z-index:1001;
 }
 
 .jumbotron-header2{
-  background: url(/static/images/recommendationbackground.jpg);
+  background: url(/static/images/recommendation_background.jpg);
   background-size: cover;
   position: relative;
   height: 75vh;
@@ -31,7 +31,6 @@
 .jumbotron-container {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
 }
 
 /*以下ハンバーガーメニュー関連*/
@@ -102,7 +101,7 @@
   position: fixed;
   top: 0;
   left: 100%;/* メニューを画面の外に飛ばす */
-  z-index: 99;
+  z-index: 999;
   background: rgba(0, 0, 0, 0.6);
   transition: .5s;
   text-align: left;
@@ -165,10 +164,13 @@ color:#F2B077;
   text-shadow: #3c7639 1px 0 10px;
 }
 
+.subswiper{
+  display: none;
+}
+
 /*以下main関連*/
 .main{
   font-size:15px;
-  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
   padding:0px;
   text-align:center;
 }
@@ -213,6 +215,7 @@ span{
 
 .box {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  font-size: 18px;
   color: #ffffff;
   text-align:left;
   padding: 10px 30px;
@@ -333,7 +336,7 @@ div.changelog{
   border-top:solid 1px #dcdcdc;
   border-bottom: solid 1px #dcdcdc;
   border-radius: 0px;
-  padding:10px 40px;
+  padding:0px 10px;
  }
 
 #note :hover {
@@ -378,7 +381,7 @@ input {
 .arrow{
     position: relative;
     display: inline-block;
-    padding: 0 0 0 22px;
+    padding: 0 0 0 25px;
     color: #000;
     vertical-align: middle;
     text-decoration: none;
@@ -483,7 +486,9 @@ input {
   border-right: 3px solid #fff;
 }
 
-
+.item_title{
+  padding: 10px;
+}
 
 input[type=radio]{
   display:none;
@@ -586,6 +591,18 @@ input:checked + label {
   }
 }
 
+@media screen and (max-width: 1200px){
+  .subswiper{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .mainswiper{
+    display: none;
+  }
+}
+
 /* フェードイン表示のための指定 */
 
 .topic{
@@ -622,7 +639,7 @@ input:checked + label {
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
-  transition-delay: 1s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
+  transition-delay: 1.0s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
 }
 
 .initial-imagea{
@@ -653,7 +670,7 @@ input:checked + label {
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
-  transition-delay: 1s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
+  transition-delay: 1.0s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
 }
 
 .initial-buttona{
@@ -672,7 +689,7 @@ input:checked + label {
   transform: translate(440px,0);
   /* transitionの設定。アニメーションの動きを設定する。 */
   transition-property: all;
-  transition-duration: 0.5s;
+  transition-duration: 1.0s;
   transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
   transition-delay: 0s; /* 最初に動く要素は遅延をかけない。*/
 }
@@ -694,7 +711,7 @@ input:checked + label {
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
-  transition-delay: 1s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
+  transition-delay: 1.0s; /* 設定値が変更されたあと、実際に変化が始まるのが1秒後 */
 }
 
 .initial-buttonb{
@@ -714,7 +731,7 @@ input:checked + label {
   transform: translate(0,0);
 }
 
-.header-menu-before{
+.initial-header{
   background:transparent;
   color: #ffffff;
   height: 80px;
@@ -722,9 +739,13 @@ input:checked + label {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 998;
 }
 
 .animated-header{
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 0s; /* 最初に動く要素は遅延をかけない。*/
   background:#3c7639;
 }

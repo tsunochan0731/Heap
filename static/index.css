@@ -3,9 +3,70 @@
   text-align:center;
 }
 
+.header h1{
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  font-size:60px;
+}
+
+.header h3{
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+}
+
+.header-logo{
+  display: block;
+  width: 210px;
+  height: 80px;
+  z-index:1001;
+}
+
+.jumbotron-header2{
+  background: url(/static/images/tanbo.jpg);
+  background-size: cover;
+  position: relative;
+  height: 75vh;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.jumbotron-container {
+    position: relative;
+    top: 50%;
+}
+
+.initial-header{
+  background:transparent;
+  color: #ffffff;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 998;
+}
+
+.animated-header{
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease; /* 最初の変化が急で、最後は穏やか。*/
+  transition-delay: 0s; /* 最初に動く要素は遅延をかけない。*/
+  background:#3c7639;
+}
+
+.swiper-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  text-shadow: #3c7639 1px 0 10px;
+}
+
 /*以下ハンバーガーメニュー関連*/
 .drawer-hidden {
   display: none;
+  z-index: 1001;/* 重なり順を一番上に */
 }
 
 /* ハンバーガーアイコンの設置スペース */
@@ -18,7 +79,7 @@
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index: 100;/* 重なり順を一番上に */
+  z-index: 1001;/* 重なり順を一番上に */
   cursor: pointer;
   background: rgba(255, 255, 255, 0);
 }
@@ -35,7 +96,6 @@
   background: #F2B077;
   transition: 0.5s;
   position: fixed;
-  z-index:1001;
 }
 
 /* 三本線のうち一番上の棒の位置調整 */
@@ -71,7 +131,7 @@
   position: fixed;
   top: 0;
   left: 100%;/* メニューを画面の外に飛ばす */
-  z-index: 99;
+  z-index: 999;
   background: rgba(0, 0, 0, 0.6);
   transition: .5s;
   text-align: left;
@@ -117,8 +177,9 @@ color:#F2B077;
 }
 
 .thema{
-  font-size:20px;
-  font-family: 'Montserrat', sans-serif;
+  font-size:25px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  padding-top:40px;
   text-align:center;
 }
 
@@ -150,7 +211,7 @@ color:#F2B077;
 
 .main-result{
   font-size:15px;
-  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   margin:0px 30%;
   padding:0px;
   text-align:left;
@@ -176,7 +237,7 @@ span{
   text-align    : center;
   cursor        : pointer;
   padding       : 12px 30px;
-  background: #006600;
+  background: #3c7639;
   color         : #ffffff;
   transition    : .3s;
   font-family: 'Montserrat', sans-serif;
@@ -186,7 +247,7 @@ span{
 
 .button-submit:hover {
   box-shadow    : none;
-  color         : #006600;
+  color         : #3c7639;
   background    : #ffffff;
 }
 
@@ -198,7 +259,7 @@ span{
   cursor        : pointer;
   padding       : 12px 10px;
   background: #ffffff;
-  color         : #006600;
+  color         : #3c7639;
   transition    : .3s;
   font-family: 'Montserrat', sans-serif;
   margin-top:20px;
@@ -209,7 +270,7 @@ span{
 .button-back :hover {
   box-shadow    : none;
   color         : #ffffff;
-  background    : #006600;
+  background    : #3c7639;
 }
 
 #disclaimer{
@@ -220,7 +281,7 @@ span{
   cursor        : pointer;
   padding       : 0px 10px;
   background: #ffffff;
-  color         : #006600;
+  color         : #3c7639;
   transition    : .3s;
   font-family: 'Montserrat', sans-serif;
   margin-top:20px;
@@ -236,7 +297,7 @@ span{
 #disclaimer :hover {
   box-shadow    : none;
   color         : #ffffff;
-  background    : #006600;
+  background    : #3c7639;
 }
 
 #note{
@@ -257,13 +318,13 @@ span{
   border-top:solid 1px #dcdcdc;
   border-bottom: solid 1px #dcdcdc;
   border-radius: 0px;
-  padding:10px 40px;
+  padding:0px 10px;
  }
 
 #note :hover {
   box-shadow    : none;
   color         : #ffffff;
-  background    : #006600;
+  background    : #3c7639;
 }
 
 input {
@@ -273,7 +334,8 @@ input {
 .jumbotron-header{
   background: linear-gradient(-135deg, rgba(255,255,0,0.6), rgba(0,100,0,0.65)),url(/static/images/yugekeshiki.png);
   background-size: cover;
-  font-family: 'Montserrat', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  padding-top:50px;
 }
 
 .item {
@@ -289,7 +351,7 @@ input[type=radio]{
 }
 
 input:checked + label {
-  background: #006600;/* マウス選択時の背景色を指定する */
+  background: #3c7639;/* マウス選択時の背景色を指定する */
   color: #ffffff; /* マウス選択時のフォント色を指定する */
 }
 
@@ -310,7 +372,6 @@ input:checked + label {
 /*ここから下はFooter関連*/
 .footer-sentence{
   font-size:15px;
-  font-family: "Avenir Next", sans-serif;
   text-align:right;
   padding-right: 20px;
   float:right;
@@ -325,23 +386,24 @@ input:checked + label {
 
 .footer {
     background-color: #3c7639;
-    padding-top:40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+    padding-top:50px;
     width: 100%;
     bottom: 0;
-    font-weight: lighter;
     color: white;
 }
 
-.footer h3{
-    font-weight:lighter;
-}
 .footer ul{
     padding-left:5px;
     list-style:none;
+    font-weight: lighter;
+    text-align : left;
 }
 .footer p{
     text-align : justify;
     font-size : 12px;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-weight: normal;
 }
 .footer iframe {
     width:100%;
@@ -363,6 +425,14 @@ input:checked + label {
 
 #hplink a:visited{
   color:white;
+}
+
+.lastone p{
+  border-top: solid 1px #ffffff;
+  text-align: center;
+  font-size: 18px;
+  padding: 30px 10px;
+  margin: 20px 10px;
 }
 
 @media screen and (max-width: 576px){
