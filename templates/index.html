@@ -13,38 +13,71 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url_for('static',filename = 'index.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <script src="/static/js/auto-load-anchor.js"></script>
   </head>
   <body>
     <div class="header">
-      <div class="jumbotron jumbotron-fluid jumbotron-header">
-        <h1>Recommended Health Maintenance</h1>
-        <h1>for Our Patients</h1>
+      <div class="initial-header">
+        <img src="/static/images/SCFM3.png" class="img-fluid header-logo">
       </div>
-    </div>
+      <div class="drawer">
+          <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+          <input type="checkbox" id="drawer-check" class="drawer-hidden" >
+          <!-- ハンバーガーアイコン -->
+          <label for="drawer-check" class="drawer-open"><span></span></label>
+          <!-- メニュー -->
+          <nav class="drawer-content">
+            <ul class="drawer-list">
+              <li class="drawer-item">
+                <a href="/" class="menu">トップページ</a>
+              </li><!-- /.drawer-item -->
+              <li class="drawer-item">
+                <a href="recommendation" class="menu">予防医療の推奨項目一覧</a>
+              </li><!-- /.drawer-item -->
+              <li class="drawer-item">
+                <a href="index" class="menu">ウェブアプリケーション</a>
+              <li class="drawer-item">
+                <a href="https://yugemed.com" class="menu">弓削メディカルクリニックについて</a>
+              <li class="drawer-item">
+                <a href="https://scfm.jp" class="menu">滋賀家庭医療学センターについて</a>
+
+              </li><!-- /.drawer-item -->
+            </ul><!-- /.drawer-list -->
+          </nav>
+        </div>
+
+        <div class="container-fluid jumbotron-container jumbotron-header2">
+          <div class="swiper-title">
+            <h3>予防医療実践のための</h3>
+            <h1>Preventive Medicine Application</h1>
+            <h3>Presented by SCFM and Hideki Tsunoda</h3>
+          </div>
+        </div>
+      </div>
     <div class="main">
-      <p class="thema">Please enter patient information below</p>
+      <p class="thema">患者情報を入力してください</p>
 
       <form action="/result" method="POST">
         <div class="form-row">
           <div class="form-group col-sm-12">
-            <label for="age" class="item">Age(years)</label>
-            <input type="text" class="form-control" name="age" pattern="[0-9]{1,3}" placeholder="Please use half-widths English numbers" required/>
+            <label for="age" class="item">年齢（years）</label>
+            <input type="text" class="form-control" name="age" pattern="[0-9]{1,3}" placeholder="半角数字" required/>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-sm-6">
-            <label for="height" class="item">Height(cm)</label>
-            <input type="text" class="form-control" name="height" pattern="[1-9][0-9]*" placeholder="Please use half-widths numbers" required/>
+            <label for="height" class="item">身長（cm）</label>
+            <input type="text" class="form-control" name="height" pattern="[1-9][0-9]*" placeholder="半角数字" required/>
           </div>
           <div class="form-group col-sm-6">
-            <label for="age" class="item">Weight(kg)</label>
-            <input type="text" class="form-control" name="weight" pattern="[1-9][0-9]*" placeholder="Please use half-widths numbers" required/>
+            <label for="age" class="item">体重（kg）</label>
+            <input type="text" class="form-control" name="weight" pattern="[1-9][0-9]*" placeholder="半角数字" required/>
           </div>
          </div>
 
          <div class="form-row form-group">
            <div class="col-12 item">
-             Gender
+             性別
            </div>
            <div class="col-sm-6">
              <div class="form-check pl-0">
@@ -66,7 +99,7 @@
 
          <div class="form-row form-group collapse collapse-pregnancy" id="collapse-pregnancy">
            <div class="col-12 item">
-             (If female)Trying to be Pregnant?
+             （女性であれば）現在妊娠の希望がありますか？
            </div>
            <div class="col-sm-6">
              <div class="form-check pl-0">
@@ -84,7 +117,7 @@
 
          <div class="form-row form-group">
            <div class="col-12 item">
-             Smoking status
+             タバコを吸いますか？
            </div>
            <div class="col-sm-4">
              <div class="form-check pl-0">
@@ -122,18 +155,18 @@
          {# 開閉したい要素のクラスに、"collapse"を追加し、idを設定する。クラスにもidと同名のクラスを設定しておく。 #}
         <div class="form-row collapse collapse-smoking" id="collapse-smoking">
           <div class="form-group col-sm-6">
-            <label for="howmany" class="item">How many cigarettes per day?</label>
+            <label for="howmany" class="item">1日何本吸いますか(吸っていましたか)?</label>
             <input type ="text" class="form-control" name="number_of_smoking" required pattern="[0-9]{1,3}" placeholder="if not applicable put 0" value="0"></p>
           </div>
           <div class="form-group col-sm-6">
-            <label for="howlong" class="item">How long?(years)</label>
+            <label for="howlong" class="item">何年間吸っていますか(吸っていましたか)？</label>
             <input type ="text" class="form-control" name="years_of_smoking" required pattern="[0-9]{1,2}" placeholder="if not applicable put 0" value="0"></p>
           </div>
         </div>
 
          <div class="form-row form-group">
            <div class="col-12 item">
-             Experience of Sexual Activity
+             直近の性交渉歴がありますか？
            </div>
            <div class="col-sm-6">
              <div class="form-check pl-0">
@@ -151,7 +184,7 @@
 
          <div class="form-row form-group">
            <div class="col-12 item">
-             alcohol status
+             お酒を飲みますか？
            </div>
            <div class="col-sm-6">
              <div class="form-check pl-0">
@@ -169,46 +202,63 @@
 
          <div class="row">
            <div class="col-12">
-             <input type = "submit" value = "Get Recommendation" class="button-submit"></p>
+             <input type = "submit" value = "Check Recommendations" class="button-submit"></p>
            </div>
          </div>
 
       </form>
     </div>
+
     <div class="footer">
       <div class="container">
       <div class="row">
         <div class="col-md-4" >
-  		    <h3>About us</h3>
-  		    <p>
-  		        Yuge Medical Clinic is a clinic which is located in the middle of Shiga prefecture. We have focused on high quality primary care and homemedical care, and we also have been engaged in education of family medicine in Shiga Prefecture.
-  		    </p>
+          <h4>SCFMについて</h4>
+          <p>
+             滋賀家庭医療学センター(SCFM)は、医療法人社団弓削メディカルクリニックを統括施設/経営母体とする団体です。主に家庭医療にまつわる臨床・教育事業を質高く展開し、良質な医療として社会に還元していきます。特にメインの事業として、「家庭医/総合診療医の養成」を掲げており、この地から良質な家庭医を数多く育てていけるよう、日夜努力しております。 
+          </p>
           <a href="https://scfm.jp"><img src="/static/images/SCFM1.png" class="footer-logo img-fluid"></a>
         </div>
         <div class="col-md-4">
-          <h3>Our Location </h3>
+          <h4>所在地</h4>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.7384303296!2d136.1174659508822!3d35.08826776977322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60017b43b7ad455f%3A0x301d1be235277d19!2z5byT5YmK44Oh44OH44Kj44Kr44Or44Kv44Oq44OL44OD44Kv77yI5Yy755mC5rOV5Lq656S-5Zuj77yJ5Zyo5a6F5Yy755mC6YOo!5e0!3m2!1sja!2sjp!4v1597480432814!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-  		  </div>
+          <ul class="sm">
+             <li><a href="https://www.facebook.com/scfm.jp/" ><img src="https://www.facebook.com/images/fb_icon_325x325.png" class="img-fluid"></a></li>
+             <li><a href="#" ><img src="http://playbookathlete.com/wp-content/uploads/2016/10/twitter-logo-4.png" class="img-fluid" ></a></li>
+         </ul>
+        </div>
         <div class="col-md-4" >
-          <h3>Contact Us</h3>
+          <h4>連絡先</h4>
           <ul>
-  		        <li>Phone : +81 - 748 - 57 - 1141</li>
-  		        <li>E-mail : scfm-tsunoda@yugemed-scfm.com</li>
+              <li>Phone : 0748 - 57 - 1141</li>
+              <li>E-mail : scfm-tsunoda@yugemed-scfm.com</li>
               <li id="hplink"><a href="https://scfm.jp">homepage : https://scfm.jp</a></li>
-  		    </ul>
-  		    <p>
-  		        This application was made by Shiga Center for Family Medicine and Hideki Tsunoda. If there are any problems, please contact us.
-  		    </p>
-  		    <ul class="sm">
-  		        <li><a href="https://www.facebook.com/scfm.jp/" ><img src="https://www.facebook.com/images/fb_icon_325x325.png" class="img-fluid"></a></li>
-  		        <li><a href="#" ><img src="http://playbookathlete.com/wp-content/uploads/2016/10/twitter-logo-4.png" class="img-fluid" ></a></li>
-  		    </ul>
+          </ul>
+          <p>
+              このホームページは滋賀家庭医療学センターとHideki Tsunodaによって管理されています。もし、ご質問・ご意見がございましたら、上記までご一報ください。
+          </p>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12 lastone" >
+          <p>Copyright © Shiga Center for Family Medicine. All Right Reserved.</p>
+        </div>
       </div>
     </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+    // ここからはヘッダーメニューのJS。
+    let obj3 = new AutoLoadAnchor({
+      anchorSelector: '.main',
+      func: (target) => {
+        document.querySelector('.initial-header').classList.add('animated-header');
+      },
+      anchorPoint: "bottom",
+    })
+    </script>
   </body>
 </html>

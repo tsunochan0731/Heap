@@ -15,11 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+    <script src="/static/js/auto-load-anchor.js"></script>
   </head>
   <body>
     <div class="header">
-      <div class="jumbotron jumbotron-fluid jumbotron-header2">
-        <div class="drawer">
+      <div class="initial-header">
+        <img src="/static/images/SCFM3.png" class="img-fluid header-logo">
+      </div>
+      <div class="drawer">
           <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
           <input type="checkbox" id="drawer-check" class="drawer-hidden" >
           <!-- ハンバーガーアイコン -->
@@ -28,10 +31,10 @@
           <nav class="drawer-content">
             <ul class="drawer-list">
               <li class="drawer-item">
-                <a href="toppagenew" class="menu">トップページ</a>
+                <a href="/" class="menu">トップページ</a>
               </li><!-- /.drawer-item -->
               <li class="drawer-item">
-                <a href="recommendation" class="menu">滋賀家庭医療学センターによる予防医療の一覧</a>
+                <a href="recommendation" class="menu">予防医療の推奨項目一覧</a>
               </li><!-- /.drawer-item -->
               <li class="drawer-item">
                 <a href="index" class="menu">ウェブアプリケーション</a>
@@ -44,12 +47,15 @@
             </ul><!-- /.drawer-list -->
           </nav>
         </div>
-        <div class="container-fluid jumbotron-container">
-          <h1>予防医療・健康増進の情報ページ</h1>
-          <h3>Information about Preventive Medicine</h3>
-          <h3>Presented by SCFM</h3>
+
+        <div class="container-fluid jumbotron-container jumbotron-header2">
+          <div class="swiper-title">
+            <h3>滋賀家庭医療学センターにおける</h3>
+            <h1>予防医療の推奨一覧</h1>
+            <h3>Information about Preventive Medicine</h3>
+            <h3>Presented by SCFM</h3>
+          </div>
         </div>
-      </div>
     </div>
 
     <!-- 以下main -->
@@ -64,8 +70,8 @@
           <div class="explanationa">
             <dl>
             {% for i in allcancers %}
-            <dt><h2 class="arrow arrowa">{{ i.split('\n')[0] }}</h2></dt>
-            <dd><p>{{ i.split('\n')[1] }}</p></dd>
+            <dt class="item_title"><h2 class="arrow arrowa">{{ i.split('\n')[0] }}</h2></dt>
+            <dd class="mb-0"><p>{{ i.split('\n')[1] }}</p></dd>
             <div class="row">
               <div class="col-12">
                 <p style="text-align: center;">
@@ -100,7 +106,7 @@
             <div class="explanationb">
               <dl>
               {% for i in allothers %}
-              <dt><h2 class="arrow arrowb">{{ i.split('\n')[0] }}</h2></dt>
+              <dt class="item_title"><h2 class="arrow arrowb">{{ i.split('\n')[0] }}</h2></dt>
               <dd><p>{{ i.split('\n')[1] }}</p></dd>
               <div class="row">
                 <div class="col-12">
@@ -136,7 +142,7 @@
               <div class="explanationc">
                 <dl>
                 {% for i in allimmunizations %}
-                <dt><h2 class="arrow arrowc">{{ i.split('\n')[0] }}</h2></dt>
+                <dt class="item_title"><h2 class="arrow arrowc">{{ i.split('\n')[0] }}</h2></dt>
                 <dd><p>{{ i.split('\n')[1] }}</p></dd>
                 <div class="row">
                   <div class="col-12">
@@ -209,5 +215,15 @@
           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+          <script>
+          // ここからはヘッダーメニューのJS。
+          let obj3 = new AutoLoadAnchor({
+            anchorSelector: '.explanationa',
+            func: (target) => {
+              document.querySelector('.initial-header').classList.add('animated-header');
+            },
+            anchorPoint: "bottom",
+          })
+          </script>
         </body>
       </html>

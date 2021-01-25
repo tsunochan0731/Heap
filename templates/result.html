@@ -22,29 +22,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     {# Bootstrapの設定ファイルを一式読み込みする。ここまで #}
+    <!-- これはSwiperのCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <!-- SwiperのCSS終わり -->
+
     <link rel="stylesheet" href="{{url_for('static',filename = 'index.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <script src="/static/js/auto-load-anchor.js"></script>
   </head>
 
   <body>
     <div class="header">
-      <div class="jumbotron jumbotron-fluid jumbotron-header">
-        <h1>Recommended Health Maintenance</h1>
-        <h1>for Our Patients</h1>
+      <div class="initial-header">
+        <img src="/static/images/SCFM3.png" class="img-fluid header-logo">
       </div>
+        <div class="drawer">
+          <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+          <input type="checkbox" id="drawer-check" class="drawer-hidden" >
+          <!-- ハンバーガーアイコン -->
+          <label for="drawer-check" class="drawer-open"><span></span></label>
+          <!-- メニュー -->
+          <nav class="drawer-content">
+            <ul class="drawer-list">
+              <li class="drawer-item">
+                <a href="" class="menu">トップページ</a>
+              </li><!-- /.drawer-item -->
+              <li class="drawer-item">
+                <a href="recommendation" class="menu">予防医療の推奨項目一覧</a>
+              </li><!-- /.drawer-item -->
+              <li class="drawer-item">
+                <a href="index" class="menu">ウェブアプリケーション</a>
+              <li class="drawer-item">
+                <a href="https://yugemed.com" class="menu">弓削メディカルクリニックについて</a>
+              <li class="drawer-item">
+                <a href="https://scfm.jp" class="menu">滋賀家庭医療学センターについて</a>
+
+              </li><!-- /.drawer-item -->
+            </ul><!-- /.drawer-list -->
+          </nav>
+        </div>
+        <div class="container-fluid jumbotron-container jumbotron-header2">
+          <div class="swiper-title">
+            <h3>予防医療実践のための</h3>
+            <h1>Preventive Medicine Application</h1>
+            <h3>Presented by SCFM and Hideki Tsunoda</h3>
+          </div>
+        </div>
     </div>
 
     <div class="main-result">
-      <p class="thema">These health maintenance are recommended for your patient</p>
-      <div class="row">
-        <div class="col-sm-12 caution">
-          <p>※以下の点にご注意ください。</p>
-            <li>以下SCFM(Shiga Center for Family Medicine)、YMC(Yuge Medical Clinic)の略語を用います。</li>
-            <li>推奨度として”推奨する”、”検討する”を使い分けています。</li>
-            <li>Statementにある助成の費用はSCFM本部YMCの立地する滋賀県竜王町在住の場合のものです。また、実際には記載してある検査費用に加えて診察料などの料金が上乗せされます</li>
-            <li>検診としての検査項目が医療保険での診療としてどの程度許容されるかは、その地域によって異なります。</li>
-        </div>
-      </div>
+      <p class="thema">滋賀家庭医療学センターは本患者に以下の予防医療を推奨します。</p>
 
       <dl>
       {% for i in result %}
@@ -75,7 +102,7 @@
         <button type="button" class="button-back" onclick="location.href='index'">←Back to the Form</button>
       </div>
       <div class="col-12">
-        <button type="button" class="button-back" onclick="location.href='toppagenew'">←Back to the Toppage</button>
+        <button type="button" class="button-back" onclick="location.href=''">←Back to the Toppage</button>
       </div>
     </div>
 
@@ -86,6 +113,12 @@
             Disclaimer
           </button>
         </p>
+        <div class="col-sm-12 caution">
+          <p>※以下の点にご注意ください。</p>
+            <li>推奨度として”推奨する”、”検討する”を使い分けています。</li>
+            <li>Statementにある助成の費用はSCFM本部YMCの立地する滋賀県竜王町在住の場合のものです。また、実際には記載してある検査費用に加えて診察料などの料金が上乗せされます</li>
+            <li>検診としての検査項目が医療保険での診療としてどの程度許容されるかは、その地域によって異なります。</li>
+        </div>
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
             このアプリケーションは、患者にヘルスメンテナンスを提供する医療従事者のため、滋賀家庭医療学センター(Shiga Center for Family Medicine: SCFM)によって作られたものです。記載されている statementsとrecommendationsについては、SCFM内で十分な議論を経て作られたものですが、情報・コンテンツの誤りや第三者による改ざん等の危険性を完全に排除できるものではなく、利用上の安全性および掲載情報の信頼性について、一切保証するものではありません。本アプリケーションの内容を患者に適用される際はくれぐれもご自身で内容をご確認いただいた上で、個々の患者や地域の状況に応じて利用をお願いします。当センターは、本アプリケーションの使用によって生じたいかなる損害についても責任を負いません。本アプリケーションの内容には、当センター以外の第三者が提示したコンテンツ、リンクなどの情報が含まれる場合がありますが、これらの利用により生じた一切の損害についても、当センターが責任を負うものではありません。
@@ -99,36 +132,52 @@
       <div class="container">
       <div class="row">
         <div class="col-md-4" >
-  		    <h3>About us</h3>
-  		    <p>
-  		        Yuge Medical Clinic is a clinic which is located in the middle of Shiga prefecture. We have focused on high quality primary care and homemedical care, and we also have been engaged in education of family medicine in Shiga Prefecture.
-  		    </p>
+          <h4>SCFMについて</h4>
+          <p>
+             滋賀家庭医療学センター(SCFM)は、医療法人社団弓削メディカルクリニックを統括施設/経営母体とする団体です。主に家庭医療にまつわる臨床・教育事業を質高く展開し、良質な医療として社会に還元していきます。特にメインの事業として、「家庭医/総合診療医の養成」を掲げており、この地から良質な家庭医を数多く育てていけるよう、日夜努力しております。 
+          </p>
           <a href="https://scfm.jp"><img src="/static/images/SCFM1.png" class="footer-logo img-fluid"></a>
         </div>
         <div class="col-md-4">
-          <h3>Our Location </h3>
+          <h4>所在地</h4>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.7384303296!2d136.1174659508822!3d35.08826776977322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60017b43b7ad455f%3A0x301d1be235277d19!2z5byT5YmK44Oh44OH44Kj44Kr44Or44Kv44Oq44OL44OD44Kv77yI5Yy755mC5rOV5Lq656S-5Zuj77yJ5Zyo5a6F5Yy755mC6YOo!5e0!3m2!1sja!2sjp!4v1597480432814!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-  		  </div>
+          <ul class="sm">
+             <li><a href="https://www.facebook.com/scfm.jp/" ><img src="https://www.facebook.com/images/fb_icon_325x325.png" class="img-fluid"></a></li>
+             <li><a href="#" ><img src="http://playbookathlete.com/wp-content/uploads/2016/10/twitter-logo-4.png" class="img-fluid" ></a></li>
+         </ul>
+        </div>
         <div class="col-md-4" >
-          <h3>Contact Us</h3>
+          <h4>連絡先</h4>
           <ul>
-  		        <li>Phone : +81 - 748 - 57 - 1141</li>
-  		        <li>E-mail : scfm-tsunoda@yugemed-scfm.com</li>
+              <li>Phone : 0748 - 57 - 1141</li>
+              <li>E-mail : scfm-tsunoda@yugemed-scfm.com</li>
               <li id="hplink"><a href="https://scfm.jp">homepage : https://scfm.jp</a></li>
-  		    </ul>
-  		    <p>
-  		        This application was made by Shiga Center for Family Medicine and Hideki Tsunoda. If there are any problems, please contact us.
-  		    </p>
-  		    <ul class="sm">
-  		        <li><a href="https://www.facebook.com/scfm.jp/" ><img src="https://www.facebook.com/images/fb_icon_325x325.png" class="img-fluid"></a></li>
-  		        <li><a href="#" ><img src="http://playbookathlete.com/wp-content/uploads/2016/10/twitter-logo-4.png" class="img-fluid" ></a></li>
-  		    </ul>
+          </ul>
+          <p>
+              このホームページは滋賀家庭医療学センターとHideki Tsunodaによって管理されています。もし、ご質問・ご意見がございましたら、上記までご一報ください。
+          </p>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12 lastone" >
+          <p>Copyright © Shiga Center for Family Medicine. All Right Reserved.</p>
+        </div>
       </div>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script>
+    // ここからはヘッダーメニューのJS。
+    let obj3 = new AutoLoadAnchor({
+      anchorSelector: '.main',
+      func: (target) => {
+        document.querySelector('.initial-header').classList.add('animated-header');
+      },
+      anchorPoint: "bottom",
+    })
+    </script>
   </body>
 </html>
