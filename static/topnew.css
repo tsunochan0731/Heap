@@ -528,6 +528,11 @@ input:checked + label {
   height:100px;
 }
 
+.facebook-logo{
+  width:280px;
+  height:auto;
+}
+
 .footer {
     background-color: #3c7639;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
