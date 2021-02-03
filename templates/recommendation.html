@@ -53,7 +53,7 @@
             <h3>滋賀家庭医療学センターにおける</h3>
             <h1>予防医療の推奨一覧</h1>
             <h3>Information about Preventive Medicine</h3>
-            <h3>Presented by SCFM</h3>
+            <h3>Presented by SCFM and Hideki Tsunoda</h3>
           </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
                   </button>
                 </p>
                 <div class="collapse" id="collapseExampleA-{{loop.index0}}">
-                  <div class="card card-body font-small">
+                  <div class="card card-body font-small card-font">
                     {% set s = i.split('\n')[2] | string() %}
                     {% for sentence in s.split('<br>') %}
                     <li>{{ sentence }}</li>
@@ -116,7 +116,7 @@
                     </button>
                   </p>
                   <div class="collapse" id="collapseExampleB-{{loop.index0}}">
-                    <div class="card card-body font-small">
+                    <div class="card card-body font-small card-font">
                       {% set s = i.split('\n')[2] | string() %}
                       {% for sentence in s.split('<br>') %}
                       <li>{{ sentence }}</li>
@@ -152,7 +152,7 @@
                       </button>
                     </p>
                     <div class="collapse" id="collapseExampleC-{{loop.index0}}">
-                      <div class="card card-body font-small">
+                      <div class="card card-body font-small card-font">
                         {% set s = i.split('\n')[2] | string() %}
                         {% for sentence in s.split('<br>') %}
                         <li>{{ sentence }}</li>
@@ -168,18 +168,18 @@
             </div>
             <div class="row">
               <div class="col-12">
-                <button type="button" class="button-back arrowback" onclick="location.href='toppagenew'">Back to the Toppage</button>
+                <button type="button" class="button-back arrowback" onclick="location.href='/'">トップページに戻る</button>
               </div>
             </div>
           </div>
-
+         </div>
 
           <!-- 以下footer -->
           <div class="footer">
             <div class="container">
             <div class="row">
               <div class="col-md-4" >
-        		    <h4>SCFMについて</h4>
+        		    <h4>滋賀家庭医療学センターとは？</h4>
         		    <p>
         		       滋賀家庭医療学センター(SCFM)は、医療法人社団弓削メディカルクリニックを統括施設/経営母体とする団体です。主に家庭医療にまつわる臨床・教育事業を質高く展開し、良質な医療として社会に還元していきます。特にメインの事業として、「家庭医/総合診療医の養成」を掲げており、この地から良質な家庭医を数多く育てていけるよう、日夜努力しております。 
         		    </p>
@@ -199,9 +199,8 @@
         		    <p>
         		        このホームページは滋賀家庭医療学センターとHideki Tsunodaによって管理されています。もし、ご質問・ご意見がございましたら、上記までご一報ください。
         		    </p>
-                <ul>
-                 <a href="https://www.facebook.com/scfm.jp/" ><img src="/static/images/FindUsOn-FB_ja-JP-RGB-1770.png"　class="facebook-logo, img-fluid"></a>
-                </ul>
+                 <a href="https://www.facebook.com/scfm.jp/" ><img src="/static/images/f_logo_RGB-Blue_250.png" class="facebook-logo img-fluid"></a>
+                 <a href="https://www.facebook.com/scfm.jp/" ><img src="/static/images/Thumb-Icon-RGB-512.png" class="facebook-logo img-fluid"></a>
               </div>
             </div>
             <div class="row">

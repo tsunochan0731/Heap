@@ -231,25 +231,31 @@ span{
   text-align: center
 }
 
+/*以下subtitleのボタン関連*/
 .button-submit {
   display       : inline-block;
-  font-size     : 18pt;
+  font-size: 18px;
   text-align    : center;
   cursor        : pointer;
-  padding       : 12px 30px;
-  background: #3c7639;
+  padding       : 12px 20px;
+  background: #d84914;
+  border-bottom: solid 4px #AB3707;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 6px;
   color         : #ffffff;
-  transition    : .3s;
-  font-family: 'Montserrat', sans-serif;
-  margin:25px 0px;
-  border: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  margin:12px 0px;
 }
 
 .button-submit:hover {
-  box-shadow    : none;
-  color         : #3c7639;
-  background    : #ffffff;
+  margin-top: 16px;
+  color         : #ffffff;
+  background    : #f56500;
+  border-bottom: none;
 }
+
 
 .button-back{
   display       : inline-block;
@@ -261,9 +267,10 @@ span{
   background: #ffffff;
   color         : #3c7639;
   transition    : .3s;
-  font-family: 'Montserrat', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   margin-top:20px;
   margin-bottom: 20px;
+  margin-left: 20px;
   border: none;
 }
 
@@ -271,6 +278,43 @@ span{
   box-shadow    : none;
   color         : #ffffff;
   background    : #3c7639;
+}
+
+.arrowback{
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 22px;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.arrowback::before,
+.arrowback::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+
+.arrowback::before{
+  width: 18px;
+  height: 18px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #3c7639;
+}
+
+.arrowback::after{
+  left: 4px;
+  box-sizing: border-box;
+  width: 5px;
+  height: 5px;
+  border: 3px solid transparent;
+  border-right: 3px solid #fff;
 }
 
 #disclaimer{
@@ -283,7 +327,7 @@ span{
   background: #ffffff;
   color         : #3c7639;
   transition    : .3s;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
   margin-top:20px;
   margin-bottom:20px;
   border-left: none;
@@ -327,6 +371,10 @@ span{
   background    : #3c7639;
 }
 
+.card-font{
+  font-family:"SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
 input {
   background-color: #f5f5f5;
 }
@@ -341,7 +389,7 @@ input {
 .item {
   float:left;
   text-align: left;
-  font-family: 'Montserrat', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   color:#666666;
   margin-top:25px;
 }
@@ -369,6 +417,23 @@ input:checked + label {
   cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
 }
 
+/*リンクについて*/
+a:link {
+color:#ffffff;
+}
+
+a:visited {
+color:#ffffff;
+}
+
+a:hover {
+color:#ffffff;
+}
+
+a:active {
+color:#ffffff;
+}
+
 /*ここから下はFooter関連*/
 .footer-sentence{
   font-size:15px;
@@ -382,6 +447,15 @@ input:checked + label {
   float:left;
   width:280px;
   height:100px;
+}
+
+.facebook-logo{
+  width:40px;
+  height:auto;
+}
+
+#logo-space{
+  text-align: center;
 }
 
 .footer {

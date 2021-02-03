@@ -17,10 +17,9 @@
     <!-- <link rel="stylesheet" href="../static/style.css"> -->
     {# Bootstrapの設定ファイルを一式読み込みする。 #}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&amp;display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     {# Bootstrapの設定ファイルを一式読み込みする。ここまで #}
     <!-- これはSwiperのCSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
@@ -80,12 +79,12 @@
         <div class="row">
         <div class="col-12">
             <p style="text-align: center;">
-              <button class="btn btn-primary" id="note" type="button" data-toggle="collapse" data-target="#collapseExample-{{loop.index0}}" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-primary" id="note" type="button" data-toggle="collapse" data-target="#collapseExample-{{loop.index0}}" aria-expanded="false" aria-controls="collapseExample-{{loop.index0}}">
                 Notes
               </button>
             </p>
             <div class="collapse" id="collapseExample-{{loop.index0}}">
-              <div class="card card-body font-small">
+              <div class="card card-body font-small card-font">
                 {% set s = i.split('\n')[2] | string() %}
                 {% for sentence in s.split('<br>') %}
                   <li>{{ sentence }}</li>
@@ -99,10 +98,8 @@
       </dl>
     <div class="row">
       <div class="col-12">
-        <button type="button" class="button-back" onclick="location.href='index'">フォームに戻る</button>
-      </div>
-      <div class="col-12">
-        <button type="button" class="button-back" onclick="location.href='/'">トップページに戻る</button>
+        <button type="button" class="button-back arrowback" onclick="location.href='index'">フォームに戻る</button>
+        <button type="button" class="button-back arrowback" onclick="location.href='/'">トップページに戻る</button>
       </div>
     </div>
 
@@ -114,20 +111,22 @@
           </button>
         </p>
         <div class="collapse" id="collapseExample">
-          <div class="card card-body">
-            <li>推奨度として”推奨する”、”検討する”を使い分けています。Statementにある助成の費用はSCFM本部YMCの立地する滋賀県竜王町在住の場合のものです。また、実際には記載してある検査費用に加えて診察料などの料金が上乗せされます。検診としての検査項目が医療保険での診療としてどの程度許容されるかは、その地域によって異なります。</li>
-            <li>このアプリケーションは、患者にヘルスメンテナンスを提供する医療従事者のため、滋賀家庭医療学センター(Shiga Center for Family Medicine: SCFM)によって作られたものです。記載されている statementsとrecommendationsについては、SCFM内で十分な議論を経て作られたものですが、情報・コンテンツの誤りや第三者による改ざん等の危険性を完全に排除できるものではなく、利用上の安全性および掲載情報の信頼性について、一切保証するものではありません。本アプリケーションの内容を患者に適用される際はくれぐれもご自身で内容をご確認いただいた上で、個々の患者や地域の状況に応じて利用をお願いします。当センターは、本アプリケーションの使用によって生じたいかなる損害についても責任を負いません。本アプリケーションの内容には、当センター以外の第三者が提示したコンテンツ、リンクなどの情報が含まれる場合がありますが、これらの利用により生じた一切の損害についても、当センターが責任を負うものではありません。</li>
+          <div class="card card-body card-font">
+            <li>このアプリケーションは、患者にヘルスメンテナンスを提供する医療従事者のため、滋賀家庭医療学センターによって作られたものです。</li>
+            <li>Statementにある助成の費用はSCFMの立地する滋賀県竜王町在住の場合のものです。実際には記載してある検査費用に加えて診察料などの料金が上乗せされます。また、検診としての検査が医療保険での診療としてどの程度許容されるかは、地域によって異なります。</li>
+            <li>記載されている statementsとrecommendationsについては、当センターで十分な議論を経て作られたものですが、情報・コンテンツの誤りや第三者による改ざん等の危険性を完全に排除できるものではなく、利用上の安全性および掲載情報の信頼性について、一切保証するものではありません。本アプリケーションの内容を患者に適用される際はくれぐれもご自身で内容をご確認いただいた上で、個々の患者や地域の状況に応じて利用をお願いします。当センターは、本アプリケーションの使用によっ生じたいかなる損害についても責任を負いません。本アプリケーションの内容には、当センター以外の第三者が提示したコンテンツ、リンクなどの情報が含まれる場合がありますが、これらの利用により生じた一切の損害についても、当センターが責任を負うものではありません。</li>
           </div>
         </div>
       </div>
       </div>
     </div>
 
+    <!-- 以下footer -->
     <div class="footer">
       <div class="container">
       <div class="row">
         <div class="col-md-4" >
-          <h4>SCFMについて</h4>
+          <h4>滋賀家庭医療学センターとは？</h4>
           <p>
              滋賀家庭医療学センター(SCFM)は、医療法人社団弓削メディカルクリニックを統括施設/経営母体とする団体です。主に家庭医療にまつわる臨床・教育事業を質高く展開し、良質な医療として社会に還元していきます。特にメインの事業として、「家庭医/総合診療医の養成」を掲げており、この地から良質な家庭医を数多く育てていけるよう、日夜努力しております。 
           </p>
@@ -136,10 +135,6 @@
         <div class="col-md-4">
           <h4>所在地</h4>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.7384303296!2d136.1174659508822!3d35.08826776977322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60017b43b7ad455f%3A0x301d1be235277d19!2z5byT5YmK44Oh44OH44Kj44Kr44Or44Kv44Oq44OL44OD44Kv77yI5Yy755mC5rOV5Lq656S-5Zuj77yJ5Zyo5a6F5Yy755mC6YOo!5e0!3m2!1sja!2sjp!4v1597480432814!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-          <ul class="sm">
-             <li><a href="https://www.facebook.com/scfm.jp/" ><img src="https://www.facebook.com/images/fb_icon_325x325.png" class="img-fluid"></a></li>
-             <li><a href="#" ><img src="http://playbookathlete.com/wp-content/uploads/2016/10/twitter-logo-4.png" class="img-fluid" ></a></li>
-         </ul>
         </div>
         <div class="col-md-4" >
           <h4>連絡先</h4>
@@ -151,6 +146,8 @@
           <p>
               このホームページは滋賀家庭医療学センターとHideki Tsunodaによって管理されています。もし、ご質問・ご意見がございましたら、上記までご一報ください。
           </p>
+           <a href="https://www.facebook.com/scfm.jp/" ><img src="/static/images/f_logo_RGB-Blue_250.png" class="facebook-logo img-fluid"></a>
+           <a href="https://www.facebook.com/scfm.jp/" ><img src="/static/images/Thumb-Icon-RGB-512.png" class="facebook-logo img-fluid"></a>
         </div>
       </div>
       <div class="row">

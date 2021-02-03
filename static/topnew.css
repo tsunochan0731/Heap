@@ -376,6 +376,10 @@ input {
   margin-bottom: 20px;
 }
 
+.card-font{
+  font-family:"SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
 
 /*以下矢印記号関連*/
 .arrow{
@@ -513,6 +517,23 @@ input:checked + label {
   cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
 }
 
+/*リンクについて*/
+a:link {
+color:#ffffff;
+}
+
+a:visited {
+color:#ffffff;
+}
+
+a:hover {
+color:#ffffff;
+}
+
+a:active {
+color:#ffffff;
+}
+
 /*ここから下はFooter関連*/
 .footer-sentence{
   font-size:15px;
@@ -529,8 +550,12 @@ input:checked + label {
 }
 
 .facebook-logo{
-  width:280px;
+  width:40px;
   height:auto;
+}
+
+#logo-space{
+  text-align: center;
 }
 
 .footer {
