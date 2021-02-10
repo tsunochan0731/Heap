@@ -17,10 +17,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
     <!-- Swiper files -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-
     <!-- javascriptファイル -->
     <script src="/static/js/auto-load-anchor.js"></script>
   </head>
+
   <body>
     <div class="header">
       <div class="initial-header">
@@ -54,7 +54,7 @@
 
 
         <!-- Slider main container -->
-        <div class="swiper-container mainswiper">
+        <div class="swiper-container display-main">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -93,55 +93,96 @@
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-
             <!-- If we need navigation buttons -->
         </div>
-
-        <!-- 以下swiper subcontainer -->
-        <div class="swiper-container subswiper">
+        <div class="swiper-container display-sub1">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <div class="swiper-slide">
-                  <img src="/static/images/swiper5.jpeg" class="img-fluid">
+                  <img src="/static/images/swiper9.jpg" class="img-fluid">
                   <div class="swiper-title">
                     <h2>医療従事者のための</h2>
-                    <h1>予防医療の</h1>
-                    <h1>情報ページ</h1>
-                    <h3>Information about Preventive Medicine Presented by SCFM</h3>
+                    <h1>予防医療の情報ページ</h1>
+                    <h3>Information about Preventive Medicine</h3>
+                    <h3>Presented by SCFM and Hideki Tsunoda</h3>
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <img src="/static/images/swiper6.jpeg" class="img-fluid">
+                  <img src="/static/images/swiper10.jpg" class="img-fluid">
                   <div class="swiper-title">
                     <h2>医療従事者のための</h2>
-                    <h1>予防医療の</h1>
-                    <h1>情報ページ</h1>
-                    <h3>Information about Preventive Medicine Presented by SCFM</h3>
+                    <h1>予防医療の情報ページ</h1>
+                    <h3>Information about Preventive Medicine</h3>
+                    <h3>Presented by SCFM and Hideki Tsunoda</h3>
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <img src="/static/images/swiper7.jpeg" class="img-fluid">
+                  <img src="/static/images/swiper11.jpg" class="img-fluid">
                   <div class="swiper-title">
                     <h2>医療従事者のための</h2>
-                    <h1>予防医療の</h1>
-                    <h1>情報ページ</h1>
-                    <h3>Information about Preventive Medicine Presented by SCFM</h3>
+                    <h1>予防医療の情報ページ</h1>
+                    <h3>Information about Preventive Medicine</h3>
+                    <h3>Presented by SCFM and Hideki Tsunoda</h3>
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <img src="/static/images/swiper8.jpeg" class="img-fluid">
+                  <img src="/static/images/swiper12.jpg" class="img-fluid">
                   <div class="swiper-title">
                     <h2>医療従事者のための</h2>
-                    <h1>予防医療の</h1>
-                    <h1>情報ページ</h1>
-                    <h3>Information about Preventive Medicine Presented by SCFM</h3>
+                    <h1>予防医療の情報ページ</h1>
+                    <h3>Information about Preventive Medicine</h3>
+                    <h3>Presented by SCFM and Hideki Tsunoda</h3>
                   </div>
                 </div>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-
+            <!-- If we need navigation buttons -->
+        </div>
+        <div class="swiper-container display-sub2">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="/static/images/swiper9.jpg" class="img-fluid">
+                  <div class="swiper-title">
+                    <h2>医療従事者のための</h2>
+                    <h1>予防医療の</h1>
+                    <h1>情報ページ</h1>
+                    <h3>Presented by SCFM and Hideki Tsunoda</h3>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="/static/images/swiper10.jpg" class="img-fluid">
+                  <div class="swiper-title">
+                    <h2>医療従事者のための</h2>
+                    <h1>予防医療の</h1>
+                    <h1>情報ページ</h1>
+                    <h3>Presented by SCFM and Hideki Tsunoda</h3>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="/static/images/swiper11.jpg" class="img-fluid">
+                  <div class="swiper-title">
+                    <h2>医療従事者のための</h2>
+                    <h1>予防医療の</h1>
+                    <h1>情報ページ</h1>
+                    <h3>Presented by SCFM and Hideki Tsunoda</h3>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="/static/images/swiper12.jpg" class="img-fluid">
+                  <div class="swiper-title">
+                    <h2>医療従事者のための</h2>
+                    <h1>予防医療の</h1>
+                    <h1>情報ページ</h1>
+                    <h3>Presented by SCFM and Hideki Tsunoda</h3>
+                  </div>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
             <!-- If we need navigation buttons -->
         </div>
 
@@ -246,6 +287,24 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <!-- auto-load-anchorのスクリプト部 -->
     <script>
+    if( window.innerWidth < 768 ){
+      let obj = new AutoLoadAnchor({
+        // 表示起点の対象になる要素をセレクタで指定する。
+        // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
+        // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
+        anchorSelector: '.color1',
+        // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
+        func: (target) => {
+          // それぞれの要素にanimatedクラスを付与する。
+          // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
+          target.querySelector('.initial-image').classList.add('animated');
+          target.querySelector('.initial-caption').classList.add('animated');
+          target.querySelector('.initial-text').classList.add('animated');
+        },
+        // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
+        anchorPoint: "top",
+      })
+    }else{
       let obj = new AutoLoadAnchor({
         // 表示起点の対象になる要素をセレクタで指定する。
         // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
@@ -262,44 +321,87 @@
         // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
         anchorPoint: "bottom",
       })
+    }
       </script>
       <script>
-      let obj1 = new AutoLoadAnchor({
+      if( window.innerWidth < 768 ){
+        let obj1 = new AutoLoadAnchor({
+          // 表示起点の対象になる要素をセレクタで指定する。
+          // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
+          // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
+          anchorSelector: '.color2',
+          // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
+          func: (target) => {
+            // それぞれの要素にanimatedクラスを付与する。
+            // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
+            target.querySelector('.initial-imagea').classList.add('animated');
+            target.querySelector('.initial-captiona').classList.add('animated');
+            target.querySelector('.initial-texta').classList.add('animated');
+            target.querySelector('.initial-buttona').classList.add('animated');
+          },
+          // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
+          anchorPoint: "top",
+        })
+      }else{
+        let obj1 = new AutoLoadAnchor({
+          // 表示起点の対象になる要素をセレクタで指定する。
+          // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
+          // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
+          anchorSelector: '.color2',
+          // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
+          func: (target) => {
+            // それぞれの要素にanimatedクラスを付与する。
+            // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
+            target.querySelector('.initial-imagea').classList.add('animated');
+            target.querySelector('.initial-captiona').classList.add('animated');
+            target.querySelector('.initial-texta').classList.add('animated');
+            target.querySelector('.initial-buttona').classList.add('animated');
+          },
+          // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
+          anchorPoint: "bottom",
+        })
+      }
+
+    </script>
+    <script>
+    if( window.innerWidth < 768 ){
+      let obj2 = new AutoLoadAnchor({
         // 表示起点の対象になる要素をセレクタで指定する。
         // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
         // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
-        anchorSelector: '.color2',
+        anchorSelector: '.color3',
         // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
         func: (target) => {
           // それぞれの要素にanimatedクラスを付与する。
           // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
-          target.querySelector('.initial-imagea').classList.add('animated');
-          target.querySelector('.initial-captiona').classList.add('animated');
-          target.querySelector('.initial-texta').classList.add('animated');
-          target.querySelector('.initial-buttona').classList.add('animated');
+          target.querySelector('.initial-imageb').classList.add('animated');
+          target.querySelector('.initial-captionb').classList.add('animated');
+          target.querySelector('.initial-textb').classList.add('animated');
+          target.querySelector('.initial-buttonb').classList.add('animated');
+        },
+        // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
+        anchorPoint: "top",
+      })
+    }else{
+      let obj2 = new AutoLoadAnchor({
+        // 表示起点の対象になる要素をセレクタで指定する。
+        // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
+        // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
+        anchorSelector: '.color3',
+        // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
+        func: (target) => {
+          // それぞれの要素にanimatedクラスを付与する。
+          // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
+          target.querySelector('.initial-imageb').classList.add('animated');
+          target.querySelector('.initial-captionb').classList.add('animated');
+          target.querySelector('.initial-textb').classList.add('animated');
+          target.querySelector('.initial-buttonb').classList.add('animated');
         },
         // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
         anchorPoint: "bottom",
       })
-    </script>
-    <script>
-    let obj2 = new AutoLoadAnchor({
-      // 表示起点の対象になる要素をセレクタで指定する。
-      // 以下の指定だと、"topic"クラスが付与されている要素が表示された時点でfuncが実行される。
-      // topicクラスが付与されている要素は複数あり、それぞれに表示された時点で起動する。
-      anchorSelector: '.color3',
-      // そのセレクタの対象要素が画面内に表示された際に実行する関数を設定する。
-      func: (target) => {
-        // それぞれの要素にanimatedクラスを付与する。
-        // topicクラス要素の子要素以下の構造がどの要素でも同一であれば、同じ指定を使いまわすことができる。
-        target.querySelector('.initial-imageb').classList.add('animated');
-        target.querySelector('.initial-captionb').classList.add('animated');
-        target.querySelector('.initial-textb').classList.add('animated');
-        target.querySelector('.initial-buttonb').classList.add('animated');
-      },
-      // 対象要素の下端が表示された時点でfuncが実行されるようにbottomを指定。
-      anchorPoint: "bottom",
-    })
+    }
+
   </script>
   <script>
   // ここからはヘッダーメニューのJS。

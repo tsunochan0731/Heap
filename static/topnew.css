@@ -154,6 +154,7 @@ color:#F2B077;
 
 .swiper-title {
   position: absolute;
+  width:100%;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
@@ -615,21 +616,47 @@ color:#ffffff;
   }
 }
 
-@media screen and (max-width: 576px){
-  .main-result{
-    margin: 0 5px;
+@media screen and (min-width:1200px) {
+  .display-sub1{
+    display: none;
+  }
+  .display-sub2{
+    display: none;
   }
 }
 
-@media screen and (max-width: 1200px){
-  .subswiper{
+@media screen and (min-width:768px) and ( max-width:1200px) {
+  .display-main{
+    display: none;
+  }
+  .display-sub1{
     display: block;
   }
+  .display-sub2{
+    display: none;
+  }
 }
 
-@media screen and (max-width: 1200px){
-  .mainswiper{
+@media screen and (max-width:768px){
+  .display-main{
     display: none;
+  }
+  .display-sub1{
+    display: none;
+  }
+  .display-sub2{
+    display: block;
+  }
+
+
+  .swiper-title {
+
+  }
+  #drawer-check:checked ~ .drawer-content {
+    left: 30%;/* メニューを画面に入れる */
+  }
+  .drawer-content {
+    width: 70%;
   }
 }
 

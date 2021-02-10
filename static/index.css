@@ -520,3 +520,22 @@ color:#ffffff;
     margin: 0 5px;
   }
 }
+
+@media screen and (max-width: 576px){
+  .main{
+    margin: 0 5px;
+  }
+}
+
+@media screen and (min-width:1200px) {}
+
+@media screen and (min-width:768px) and ( max-width:1200px) {}
+
+@media screen and (max-width:768px){
+  #drawer-check:checked ~ .drawer-content {
+    left: 30%;/* メニューを画面に入れる */
+  }
+  .drawer-content {
+    width: 70%;
+  }
+}
