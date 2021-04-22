@@ -88,7 +88,7 @@ def calculation():
         result.append(cancers.breast_ca())
     if age >= 21 and age < 65 and gender == "f":
         result.append(cancers.cervical_ca())
-    if age >= 55 and age < 80 and smoking_hx >= 30:
+    if age >= 50 and age < 80 and smoking_hx >= 20:
         result.append(cancers.lung_ca())
     if age >= 50 and age < 70 and gender == "m":
         result.append(cancers.prostate_ca())
