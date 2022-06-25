@@ -1,3 +1,4 @@
+#coding: UTF-8
 #Flaskとrender_template（HTMLを表示させるための関数）をインポート
 #ライブラリを使用する際のお約束
 from flask import Flask,render_template, request, url_for
@@ -80,7 +81,7 @@ def calculation():
     result = list()
 
     #以下Cancers
-    if age >= 50 and age < 75:
+    if age >= 45 and age < 75:
         result.append(cancers.colon_ca())
     if age > 50:
         result.append(cancers.gastric_ca())
@@ -104,7 +105,7 @@ def calculation():
         result.append(others.falling())
     if age >= 65 and age < 75 and (smoking == 1 or smoking == 3):
         result.append(others.aneurysm())
-    if age >= 40 and age < 70 and BMI > 25:
+    if age >= 35 and age < 70 and BMI > 25:
         result.append(others.diabetes())
     if age >= 40 and age < 70:
         result.append(others.hyperlipidemia())
