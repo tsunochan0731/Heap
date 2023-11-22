@@ -44,6 +44,7 @@ def recommendation():
     allothers.append(others.diabetes())
     allothers.append(others.hyperlipidemia())
     allothers.append(others.depression())
+    allothers.append(others.anxiety())
     allothers.append(others.STD_1())
     allothers.append(others.STD_2())
     allothers.append(others.alcohol())
@@ -111,6 +112,8 @@ def calculation():
         result.append(others.hyperlipidemia())
     if age >= 12:
         result.append(others.depression())
+    if age >= 8:
+        result.append(others.anxiety())
     if gender == "f" and sexual_activity == 1:
         result.append(others.STD_1())
     if gender == "f" and sexual_activity == 1:

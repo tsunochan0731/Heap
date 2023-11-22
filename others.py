@@ -22,6 +22,9 @@ def hyperlipidemia():
 def depression():
     return "うつ病 (Depression)\n当院では12歳以上の全ての患者に対して、これまで一度もスクリーニングが検討されていない場合、何らかのリスクファクターがあると考えられる場合にうつ病のスクリーニングを検討する。スクリーニングはPHQ2(Patient Health Questionnaire 2)、PHQ-9に加えて、高齢者にはGDS(Geriatric Depression Scale)、産後や妊娠中の女性に対してはエジンバラ産後うつ自己評価票などを用いて実施する。\nUSPSTFでは12歳〜18歳の思春期・青年期の若者、全ての成人に対してうつ病のスクリーニングを推奨している(いずれもGrade B)(https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/depression-in-adults-screening https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/depression-in-children-and-adolescents-screening)<br>うつ病のリスクファクターとして、若年〜中年、女性、白人以外、Undereducated people(十分な教育を受けられなかった人々)、離婚後、非雇用者、合併症(不眠症、他の精神疾患、家族歴、悪性腫瘍、心疾患など)があげられている。"
 
+def anxiety():
+    return "当院では8歳以上の小児・青年期の患者、全ての成人を対象に不安症(Anxiety)のスクリーニングを推奨する。\nUSPSTFでは8歳以上の小児・青年期の患者(Grade B)と成人(Grade B)に対して不安症(Anxiety)のスクリーニングを推奨している。(https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/anxiety-adults-screening)<br>USPSTFでは成人へのスクリーニングツールとして、Generalized Anxiety Disorder (GAD) scale, Edinburgh Postnatal Depression Scale (EPDS) anxiety subscale, Geriatric Anxiety Scale (GAS), and the Geriatric Anxiety Inventory (GAI)を、小児・青年期の患者へのスクリーニングツールとして、Screen for Child Anxiety Related Disorders (SCARED) (global anxiety and any anxiety disorder) and the Patient Health Questionnaire–Adolescent (GAD and panic disorder)を提案している。"
+    
 def STD_1():
     return "性感染症(淋菌、クラミジア) (STD - Gonorrhea and Chlamydia)\n当院では性感染症のリスクが高い女性に対して、尿検査あるいは膣、尿道検体を用いた核酸増幅検査による性感染症(淋菌、クラミジア)を推奨する。\nUSPSTFでは①24歳未満の性交渉歴がある女性、②24歳以上で性感染症のリスクが高い女性に対して性感染症(淋菌、クラミジア)が推奨されている(Grade B)が、当院では、日本の現状では特に①の患者全てに検査を推奨することは現実的ではないと考える。<br>USPSTFではリスク因子として、新規または複数のセックスパートナーや性感染症のあるセックスパートナーの存在、コンドームの不使用、STIの罹患歴、性行為によって金銭やDrugを得ていることなどをあげている。(https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/chlamydia-and-gonorrhea-screening)"
 
